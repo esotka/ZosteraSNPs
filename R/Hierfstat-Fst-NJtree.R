@@ -27,15 +27,14 @@ env$site.nice <- factor(env$site.nice)
 #### pairwise Fst- adults only ###
 geno2.all <- data.frame(grp=paste(env$site.nice,env$SvD,sep="_"),geno)
 geno2.adults <- geno2.all[env$adult.seed=="A",]
-#bs <- basic.stats(geno2)
 fst <- pairwise.WCfst(geno2.adults) # this takes a long time.
 write.csv(fst,"output/fst-adults-SvD.csv")
 
 # make tree
+fst.matrix <- read.csv("output/fst-adults-SvD.csv")[,-1]
+rownames(fst.matrix) <- colnames(fst.matrix)
 library(ape)
-tr <- nj(fst)
-plot(tr,"unrooted")
-add.scale.bar()
+tr <- nj(as.matrix(fst.matrix))
 
 # split SNPS into 100 groups (~200 SNPs)
 # this takes awhile
@@ -57,4 +56,7 @@ load("output/basic.stats.RData")
 # 96 groups of 200 SNPs each
 print(prop.part(tr.100reps[-97]))
 
-
+pdf("output/fst-adults-SvD-NJtree.pdf")
+plot(tr,"unrooted")
+add.scale.bar(x=0.004,y=0.005)
+dev.off()
