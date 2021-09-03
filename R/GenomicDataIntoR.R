@@ -32,6 +32,7 @@ out <- read.delim("data/zos.393ind.HWE.99.calls.forGenind",header=F,sep=" ")
 geno <- t(out) # row = ind; col = SNP
 dat$V1 <- gsub(".1","",dat$V1) ### get rid of .1
 colnames(geno) <- paste(dat$V1,dat$V2,sep="_")
+writeLines(colnames(geno),"data/loci19433")
 id <- readLines("data/ind393")
 id[id=="LD3_012A.bwa.bam"] <- "LD3_12A.bwa.bam"
 rownames(geno) <- substr(id,1,7)
