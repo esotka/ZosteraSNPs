@@ -16,3 +16,8 @@ FST analysis and Neighbor joining tree with support
 
 ### Heterozygosity  
 ***data/zos.393ind.HWE.99.calls.forGenind***  
+***R/basicStats.R***  
+***output/BasicStats.csv***  
+
+
+
