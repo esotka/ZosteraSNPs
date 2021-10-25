@@ -14,6 +14,8 @@ env$site.nice[env$site.nice=="N"] <- "Niles"
 env$site.nice[env$site.nice=="W"] <- "West"
 env$site.nice[env$site.nice=="L"] <- "Lynch"
 env$site.depth <- paste(env$site.nice,env$SvD,sep="_")
+env$site.depth <- factor(env$site.depth)
+env$site.depth <- factor(env$site.depth,levels=levels(env$site.depth)[c(1:4,7,8,5,6)])
 
 kcol <- c("black", #1
           "red",#2
@@ -45,24 +47,27 @@ for (k in 1:9)#length(ks))
   dat <- read.delim(paste("data/NGSadmix-adults/",ks[k],".qopt",sep=""),sep=" ",header = F)
   dat <- dat[,-(dim(dat)[2])]
   dat <- dat[,order(colorder[[k]])]
+  dat <- dat[order(env$site.depth),]
   fig <- barplot(t(dat),col=kcol[1:length(colorder[[k]])],space=0,border=NA,xlab="",ylab="",
           names.arg = rep("",nrow(dat)),horiz=F)#,main=substr(ks[k],1,3))
   mtext(substr(ks[k],1,3),side=2,line=-1.5,at=.5)
-  for(i in 1:length(unique(env$site.depth)))
+  for(i in 1:length(levels(env$site.depth)))
   {
-    x <- 1:dim(env)[1]
-    xtmp <- x[env$site.depth==unique(env$site.depth)[i]]
+    env.tmp <- env[order(env$site.depth),]
+    x <- 1:dim(env.tmp)[1]
+    xtmp <- x[env.tmp$site.depth==levels(env.tmp$site.depth)[i]]
     segments(max(xtmp),1,max(xtmp),-0.05,col="white",lwd=3)
   }
 }
 
     fig <- barplot(t(dat),col="white",space=0,border=NA,xlab="",ylab="",
                    names.arg = rep("",nrow(dat)),horiz=F)
-    for(i in 1:length(unique(env$site.depth)))
+    for(i in 1:length(levels(env$site.depth)))
     {
-      x <- 1:dim(env)[1]
-      xtmp <- x[env$site.depth==unique(env$site.depth)[i]]
-      text(x=mean(xtmp),y=.5,unique(env$site.depth)[i],cex=1.5)
+      env.tmp <- env[order(env$site.depth),]
+      x <- 1:dim(env.tmp)[1]
+      xtmp <- x[env.tmp$site.depth==levels(env.tmp$site.depth)[i]]
+      text(x=mean(xtmp),y=.5,levels(env.tmp$site.depth)[i],cex=1.5)
       segments(max(xtmp),1,max(xtmp),-0.05,col="black",lwd=3)
       
   }

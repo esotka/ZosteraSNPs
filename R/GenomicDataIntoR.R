@@ -3,7 +3,7 @@
 ## Method
 rm(list=ls())
 library(adegenet)
-dat <- read.delim('data/zos.393ind.HWE.99.geno.geno.gz',header=F)
+dat <- read.delim('data/zos.393ind.HWE.99.gl.beagle.gz',header=T)
 dat <- dat[,-dim(dat)[2]] # last column is NA
 dat[dat=="NN"] <- NA
 nind <- 393

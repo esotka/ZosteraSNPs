@@ -4,9 +4,25 @@
 
 rm(list=ls())
 library(hierfstat)
-geno <- read.table('data/zos.393ind.HWE.99.calls.forGenind',sep=" ")
+library(vcfR)
+dat <- read.vcfR("data/zos.393ind.HWE.99.loci19433.vcf.gz")
+gt2 <- extract.gt(dat,return.alleles=F)
+gt2[gt2=="0/0"] <- 0
+gt2[gt2=="0/1"] <- 1
+gt2[gt2=="1/1"] <- 2
+loci <- rownames(gt2)
+loci.tmp <- paste(lapply(strsplit(loci,"_"),"[[",1),lapply(strsplit(loci,"_"),"[[",2),sep="_")
+rownames(gt2) <- loci.tmp
+
+loci.to.use <- read.table("data/loci19433")
+loci.to.use$V3 <- paste(loci.to.use$V1,loci.to.use$V2,sep="_")
+### subset to loci to use
+gt2 <- gt2[rownames(gt2)%in%loci.to.use$V3,]
+geno <- matrix(as.numeric(gt2),nrow=dim(gt2)[1])
 geno <- t(geno) # row = ind; col = loci
-colnames(geno) <- readLines("data/loci19433")
+
+rownames(geno) <- readLines("data/ind393_clean")
+colnames(geno) <- rownames(gt2)
 
 
 ############# ENV DATA ##############
@@ -28,10 +44,10 @@ env$site.depth.lifeHistory <- paste(env$site.nice,env$SvD,env$adult.seed,sep="_"
 geno.h <- data.frame(grp=env$site.depth.lifeHistory,geno)
 out <- basic.stats(geno.h) # takes a minute
 
-n <- colMeans(out$n.ind.samp)
-Ho <- colMeans(out$Ho) # observed heterozygosities
-Hs <- colMeans(out$Hs) # observed gene diversities ("sometimes misleadingly called expected heterozygosity")
-Fis <- colMeans(out$Fis) # observed Fis ==> these were all NAs
+n <- c(table(env$site.depth.lifeHistory))
+Ho <- colMeans(out$Ho,na.rm=T) # observed heterozygosities
+Hs <- colMeans(out$Hs,na.rm=T) # observed gene diversities ("sometimes misleadingly called expected heterozygosity")
+Fis <- colMeans(out$Fis,na.rm=T) # observed Fis ==> these were all NAs
 
 out.summary <- data.frame(n,Ho,Hs,Fis)
 out.summary$site <- unlist(lapply(strsplit(rownames(out.summary),"_"),"[[",1))
@@ -47,4 +63,7 @@ dat <- dat[dat$n>3,]
 ad <- dat[dat$adult.seed=="A",]
 anova(lm(Ho~depth,ad))
 anova(lm(Hs~depth,ad))
+anova(lm(Fis~depth,ad))
 anova(lm(Ho~adult.seed,dat))
+anova(lm(Hs~adult.seed,dat))
+anova(lm(Fis~adult.seed,dat))

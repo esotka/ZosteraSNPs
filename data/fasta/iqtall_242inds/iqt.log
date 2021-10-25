@@ -1,0 +1,521 @@
+IQ-TREE multicore version 1.6.11 for Linux 64-bit built Jun  6 2019
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    92355f672ec4 (AVX, 125 GB RAM)
+Command: /usr/local/iqtree/bin/iqtree -s /tmp/IQTREE/rJ_QwREGDJ/seqin.fst -st DNA -pre /tmp/IQTREE/rJ_QwREGDJ/iqt -m GTR+F -bb 1000 -pers 0.5 -numstop 100 -nt 3
+Seed:    971575 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Tue Sep 28 09:22:03 2021
+Kernel:  AVX - 3 threads (24 CPU cores detected)
+
+Reading alignment file /tmp/IQTREE/rJ_QwREGDJ/seqin.fst ... Fasta format detected
+Alignment most likely contains protein sequences
+WARNING: Your specified sequence type is different from the detected one
+WARNING: 7 sites contain only gaps or ambiguous characters.
+Alignment has 242 sequences with 19500 columns, 19326 distinct patterns
+7069 parsimony-informative, 2799 singleton sites, 9632 constant sites
+         Gap/Ambiguity  Composition  p-value
+   1  DD1_01A   42.93%    passed     99.78%
+   2  DD1_02A   39.60%    passed     11.32%
+   3  DD1_03A   38.88%    failed      3.31%
+   4  DD1_04A   44.57%    failed      0.01%
+   5  DD1_05A   34.83%    passed     51.83%
+   6  DD1_06A   36.18%    passed     61.75%
+   7  DD1_07A   48.98%    failed      0.20%
+   8  DD1_08A   42.75%    passed     47.18%
+   9  DD1_09A   48.78%    failed      0.29%
+  10  DD1_11A   55.49%    failed      0.65%
+  11  DD1_12A   40.33%    passed     60.58%
+  12  DD1_13A   33.89%    passed     66.20%
+  13  DD1_15A   38.01%    passed      8.36%
+  14  DD2_01A   34.16%    passed     62.04%
+  15  DD2_02A   40.48%    passed     29.28%
+  16  DD2_03A   38.83%    passed     63.98%
+  17  DD2_04A   38.10%    passed     15.11%
+  18  DD2_05A   35.92%    passed     53.23%
+  19  DD2_06A   40.83%    passed     19.28%
+  20  DD2_07A   39.91%    passed     39.71%
+  21  DD2_08A   34.89%    passed     39.67%
+  22  DD2_11A   41.47%    failed      3.51%
+  23  DD2_12A   33.45%    passed     47.57%
+  24  DD2_13A   36.03%    passed     55.24%
+  25  DD2_14A   31.05%    passed     30.61%
+  26  DD2_15A   32.96%    passed     83.72%
+  27  DD3_01A   36.49%    passed     64.18%
+  28  DD3_02A   35.56%    passed     76.25%
+  29  DD3_03A   40.43%    passed     72.08%
+  30  DD3_04A   34.82%    passed     94.85%
+  31  DD3_05A   36.44%    passed     48.53%
+  32  DD3_06A   37.21%    passed     33.83%
+  33  DD3_07A   42.56%    failed      4.84%
+  34  DD3_08A   34.46%    passed     98.83%
+  35  DD3_09A   34.56%    passed     83.40%
+  36  DD3_10A   43.59%    failed      0.35%
+  37  DD3_11A   44.92%    passed      6.97%
+  38  DD3_12A   40.68%    failed      2.25%
+  39  DD3_13A   30.00%    passed     66.74%
+  40  DD3_14A   32.50%    passed     82.45%
+  41  DD3_15A   45.64%    failed      0.06%
+  42  DS1_01A   38.36%    passed     13.49%
+  43  DS1_02A   42.18%    failed      0.06%
+  44  DS1_04A   39.06%    failed      2.56%
+  45  DS1_05A   40.14%    passed     97.56%
+  46  DS1_06A   41.74%    passed     97.02%
+  47  DS1_07A   37.98%    passed     28.61%
+  48  DS1_08A   45.72%    failed      0.36%
+  49  DS1_09A   43.12%    failed      0.02%
+  50  DS1_11A   41.33%    failed      0.24%
+  51  DS1_12A   58.09%    failed      0.00%
+  52  DS1_13A   42.15%    passed      9.53%
+  53  DS1_14A   49.51%    passed     72.73%
+  54  DS1_15A   50.81%    passed     59.71%
+  55  DS2_01A   40.19%    failed      1.84%
+  56  DS2_02A   41.79%    failed      4.08%
+  57  DS2_03A   47.86%    failed      0.33%
+  58  DS2_04A   51.31%    failed      0.00%
+  59  DS2_05A   44.37%    failed      0.01%
+  60  DS2_06A   45.96%    passed      6.50%
+  61  DS2_07A   42.75%    passed      8.05%
+  62  DS2_08A   45.89%    failed      0.29%
+  63  DS2_09A   40.76%    failed      2.40%
+  64  DS2_11A   51.99%    failed      4.79%
+  65  DS2_12A   45.58%    failed      0.02%
+  66  DS2_13A   40.55%    failed      1.80%
+  67  DS2_14A   44.64%    failed      1.29%
+  68  DS2_15A   47.43%    failed      0.08%
+  69  DS3_01A   43.86%    failed      3.66%
+  70  DS3_02A   43.78%    passed     61.90%
+  71  DS3_03A   43.58%    failed      0.02%
+  72  DS3_04A   42.89%    failed      0.00%
+  73  DS3_05A   51.17%    failed      0.00%
+  74  DS3_06A   54.45%    failed      0.00%
+  75  DS3_11A   39.89%    passed     53.21%
+  76  DS3_15A   39.55%    failed      2.77%
+  77  LD1_01A   59.31%    failed      0.09%
+  78  LD1_02A   39.19%    failed      0.20%
+  79  LD1_03A   38.36%    failed      0.47%
+  80  LD1_04A   48.27%    passed     34.84%
+  81  LD1_05A   31.89%    failed      0.79%
+  82  LD1_06A   34.91%    passed     59.87%
+  83  LD1_07A   34.01%    passed     53.63%
+  84  LD1_08A   35.52%    passed     14.59%
+  85  LD1_09A   34.30%    passed     94.23%
+  86  LD1_10A   50.44%    failed      2.94%
+  87  LD1_11A   35.94%    passed     81.31%
+  88  LD1_12A   37.42%    passed     88.43%
+  89  LD1_14A   35.56%    passed     21.93%
+  90  LD2_01A   32.38%    passed     83.09%
+  91  LD2_02A   34.27%    failed      4.57%
+  92  LD2_03A   45.13%    failed      0.00%
+  93  LD2_04A   33.56%    passed     54.64%
+  94  LD2_05A   38.35%    passed     95.52%
+  95  LD2_06A   32.66%    passed     99.79%
+  96  LD2_07A   38.57%    failed      1.41%
+  97  LD2_08A   48.23%    failed      0.04%
+  98  LD2_09A   36.55%    passed     93.87%
+  99  LD2_11A   34.74%    passed     95.67%
+ 100  LD2_12A   32.73%    passed     90.81%
+ 101  LD2_13A   43.83%    failed      2.67%
+ 102  LD2_14A   38.28%    failed      0.59%
+ 103  LD2_15A   34.55%    passed     91.07%
+ 104  LD3_01A   39.22%    failed      0.04%
+ 105  LD3_02A   35.70%    passed      5.61%
+ 106  LD3_03A   39.82%    passed     28.93%
+ 107  LD3_04A   36.37%    failed      0.18%
+ 108  LD3_05A   43.63%    failed      0.02%
+ 109  LD3_06A   39.05%    passed      6.94%
+ 110  LD3_07A   36.58%    passed     15.40%
+ 111  LD3_08A   39.87%    failed      0.12%
+ 112  LD3_09A   41.69%    failed      0.93%
+ 113  LD3_14A   38.48%    passed     96.37%
+ 114  LD3_15A   33.65%    passed     96.25%
+ 115  LS1_01A   44.80%    failed      0.03%
+ 116  LS1_02A   38.11%    failed      4.05%
+ 117  LS1_03A   29.53%    passed     52.01%
+ 118  LS1_04A   33.79%    passed     61.23%
+ 119  LS1_05A   37.22%    passed     94.66%
+ 120  LS1_06A   33.15%    passed     62.71%
+ 121  LS1_07A   36.59%    passed     24.43%
+ 122  LS1_08A   40.98%    passed     85.05%
+ 123  LS1_09A   44.61%    failed      0.58%
+ 124  LS1_11A   30.31%    passed     19.78%
+ 125  LS1_12A   34.96%    passed     57.44%
+ 126  LS1_13A   42.83%    passed     26.30%
+ 127  LS1_14A   59.91%    passed     73.92%
+ 128  LS1_15A   40.95%    passed     15.49%
+ 129  LS2_01A   36.60%    passed     17.46%
+ 130  LS2_02A   46.95%    failed      0.00%
+ 131  LS2_03A   44.19%    failed      0.01%
+ 132  LS2_04A   33.12%    passed     83.83%
+ 133  LS2_05A   34.99%    failed      4.53%
+ 134  LS2_06A   34.05%    passed     65.69%
+ 135  LS2_07A   34.86%    passed     25.62%
+ 136  LS2_08A   38.56%    passed     11.42%
+ 137  LS2_09A   50.74%    failed      0.03%
+ 138  LS2_11A   32.67%    passed     77.55%
+ 139  LS2_12A   33.39%    passed     99.79%
+ 140  LS2_13A   30.56%    passed     34.65%
+ 141  LS2_14A   33.55%    passed     93.57%
+ 142  LS2_15A   40.07%    failed      0.37%
+ 143  LS3_01A   38.84%    failed      0.14%
+ 144  LS3_02A   38.87%    passed     20.54%
+ 145  LS3_03A   45.67%    failed      0.07%
+ 146  LS3_04A   40.48%    failed      0.07%
+ 147  LS3_05A   43.77%    failed      0.08%
+ 148  LS3_06A   41.87%    failed      0.16%
+ 149  LS3_07A   46.38%    failed      0.29%
+ 150  LS3_08A   42.13%    failed      0.95%
+ 151  LS3_09A   43.09%    failed      0.17%
+ 152  LS3_10A   52.79%    failed      0.00%
+ 153  LS3_11A   41.67%    failed      0.08%
+ 154  LS3_12A   37.50%    passed      8.26%
+ 155  LS3_13A   40.74%    failed      0.42%
+ 156  LS3_14A   34.86%    passed      5.27%
+ 157  LS3_15A   32.58%    failed      1.49%
+ 158  ND1_01A   38.28%    passed      5.91%
+ 159  ND1_02A   46.99%    failed      0.00%
+ 160  ND1_03A   42.32%    failed      0.29%
+ 161  ND1_04A   54.40%    failed      2.46%
+ 162  ND1_12A   64.35%    failed      1.84%
+ 163  ND2_01A   35.83%    passed     16.25%
+ 164  ND2_03A   61.76%    passed     84.84%
+ 165  ND2_04A   32.85%    passed      8.75%
+ 166  ND2_06A   37.90%    failed      4.64%
+ 167  ND2_07A   42.06%    failed      0.26%
+ 168  ND2_12A   30.82%    passed     97.94%
+ 169  ND2_14A   38.77%    failed      0.22%
+ 170  ND2_15A   50.29%    failed      1.93%
+ 171  ND3_01A   50.76%    passed     24.84%
+ 172  ND3_03A   48.46%    passed      5.49%
+ 173  ND3_04A   45.79%    passed      8.64%
+ 174  ND3_05A   42.56%    failed      0.36%
+ 175  ND3_07A   37.13%    passed     37.17%
+ 176  ND3_08A   37.04%    passed     27.92%
+ 177  ND3_09A   36.74%    passed     45.53%
+ 178  ND3_10A   41.19%    passed     97.79%
+ 179  ND3_13A   45.28%    passed     31.13%
+ 180  ND3_14A   35.29%    passed     90.83%
+ 181  ND3_15A   49.48%    failed      0.00%
+ 182  NS1_02A   39.37%    passed     97.04%
+ 183  NS1_03A   60.88%    failed      0.06%
+ 184  NS1_04A   38.35%    passed      6.62%
+ 185  NS1_05A   47.87%    failed      4.21%
+ 186  NS1_06A   39.54%    passed     10.99%
+ 187  NS1_07A   63.51%    failed      0.00%
+ 188  NS1_09A   43.98%    failed      0.02%
+ 189  NS1_10A   40.41%    passed     31.31%
+ 190  NS1_13A   39.06%    failed      0.65%
+ 191  NS2_01A   31.81%    passed     86.54%
+ 192  NS2_02A   52.12%    passed     13.92%
+ 193  NS2_03A   44.35%    passed     27.63%
+ 194  NS2_04A   52.90%    failed      0.78%
+ 195  NS2_06A   41.32%    passed      6.59%
+ 196  NS2_07A   42.32%    passed     17.51%
+ 197  NS2_09A   45.46%    failed      0.10%
+ 198  NS2_12A   47.35%    passed     20.55%
+ 199  NS2_13A   63.68%    failed      0.00%
+ 200  NS3_01A   41.67%    failed      0.17%
+ 201  NS3_14A   64.69%    failed      0.00%
+ 202  NS3_15A   39.92%    passed     40.42%
+ 203  WD1_10A   58.03%    failed      0.06%
+ 204  WD1_12A   44.95%    failed      1.07%
+ 205  WD1_13A   34.37%    passed     57.85%
+ 206  WD1_14A   32.70%    passed     73.38%
+ 207  WD1_15A   55.39%    failed      0.86%
+ 208  WD2_01A   46.11%    passed     20.33%
+ 209  WD2_03A   60.90%    failed      3.33%
+ 210  WD2_04A   32.49%    passed     66.90%
+ 211  WD2_09A   32.87%    passed     91.07%
+ 212  WD3_07A   51.86%    failed      0.02%
+ 213  WD3_08A   40.77%    passed     12.53%
+ 214  WD3_13A   59.70%    failed      0.00%
+ 215  WD3_14A   60.51%    failed      0.00%
+ 216  WS1_01A   47.74%    passed      9.80%
+ 217  WS1_09A   31.79%    passed     71.34%
+ 218  WS1_10A   39.46%    passed      5.29%
+ 219  WS1_11A   52.26%    failed      1.03%
+ 220  WS1_12A   58.51%    failed      0.91%
+ 221  WS2_01A   48.66%    failed      0.43%
+ 222  WS2_02A   32.72%    passed     50.58%
+ 223  WS2_04A   50.36%    failed      0.01%
+ 224  WS2_05A   38.92%    passed     90.84%
+ 225  WS2_06A   38.51%    passed     86.43%
+ 226  WS2_07A   41.70%    failed      1.88%
+ 227  WS2_09A   49.37%    failed      0.00%
+ 228  WS2_11A   58.08%    failed      0.00%
+ 229  WS2_12A   43.53%    failed      3.15%
+ 230  WS2_14A   47.66%    passed     14.50%
+ 231  WS2_15A   52.76%    failed      1.18%
+ 232  WS3_01A   38.57%    failed      0.90%
+ 233  WS3_02A   43.26%    failed      0.11%
+ 234  WS3_03A   41.44%    passed     12.73%
+ 235  WS3_04A   54.42%    failed      1.50%
+ 236  WS3_05A   46.34%    failed      1.25%
+ 237  WS3_06A   50.24%    failed      0.01%
+ 238  WS3_07A   42.53%    failed      1.50%
+ 239  WS3_08A   50.45%    passed     47.74%
+ 240  WS3_12A   47.12%    failed      0.03%
+ 241  WS3_13A   44.26%    passed      8.07%
+ 242  WS3_15A   51.10%    failed      0.00%
+WARNING: 38 sequences contain more than 50% gaps/ambiguity
+****  TOTAL     42.10%  114 sequences failed composition chi2 test (p-value<5%; df=3)
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 1.810 seconds
+Generating 1000 samples for ultrafast bootstrap (seed: 971575)...
+
+NOTE: 225 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -422244.766
+2. Current log-likelihood: -375176.025
+3. Current log-likelihood: -375072.715
+Optimal log-likelihood: -375072.691
+Rate parameters:  A-C: 1.21365  A-G: 5.16228  A-T: 2.23153  C-G: 0.25687  C-T: 5.05290  G-T: 1.00000
+Base frequencies:  A: 0.162  C: 0.338  G: 0.336  T: 0.164
+Parameters optimization took 3 rounds (14.573 sec)
+Computing ML distances based on estimated model parameters... 34.821 sec
+Computing BIONJ tree...
+0.052 seconds
+Log-likelihood of BIONJ tree: -379778.380
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 195.806 second
+Computing log-likelihood of 98 initial trees ... 65.251 seconds
+Current best score: -375024.509
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -374775.645
+Iteration 10 / LogL: -375039.700 / Time: 0h:6m:6s
+Iteration 20 / LogL: -375181.516 / Time: 0h:7m:14s
+Finish initializing candidate tree set (20)
+Current best tree score: -374775.645 / CPU time: 403.315
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 24: -374752.979
+Iteration 30 / LogL: -374906.400 / Time: 0h:8m:31s (0h:27m:30s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 34: -374734.033
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 36: -374684.398
+Iteration 40 / LogL: -374906.317 / Time: 0h:9m:45s (0h:23m:55s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 41: -374609.082
+Iteration 50 / LogL: -374768.382 / Time: 0h:10m:55s (0h:20m:13s left)
+Log-likelihood cutoff on original alignment: -375189.544
+Iteration 60 / LogL: -374835.621 / Time: 0h:12m:9s (0h:16m:39s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 66: -374522.545
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 68: -374512.554
+Iteration 70 / LogL: -374543.314 / Time: 0h:13m:27s (0h:19m:4s left)
+Iteration 80 / LogL: -374536.801 / Time: 0h:14m:37s (0h:16m:15s left)
+Iteration 90 / LogL: -374539.975 / Time: 0h:15m:49s (0h:13m:50s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 100: -374509.766
+Iteration 100 / LogL: -374509.766 / Time: 0h:16m:58s (0h:17m:7s left)
+Log-likelihood cutoff on original alignment: -375101.271
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.954
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 110 / LogL: -374609.238 / Time: 0h:18m:7s (0h:14m:56s left)
+Iteration 120 / LogL: -374786.183 / Time: 0h:19m:18s (0h:12m:57s left)
+Iteration 130 / LogL: -374658.487 / Time: 0h:20m:28s (0h:11m:5s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 139: -374503.220
+Iteration 140 / LogL: -374617.166 / Time: 0h:21m:37s (0h:15m:22s left)
+Iteration 150 / LogL: -374579.782 / Time: 0h:22m:44s (0h:13m:33s left)
+Log-likelihood cutoff on original alignment: -375101.271
+Iteration 160 / LogL: -374730.908 / Time: 0h:23m:54s (0h:11m:51s left)
+Iteration 170 / LogL: -374727.755 / Time: 0h:24m:55s (0h:10m:9s left)
+Iteration 180 / LogL: -374529.729 / Time: 0h:26m:2s (0h:8m:34s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 181: -374480.919
+Iteration 190 / LogL: -374540.884 / Time: 0h:27m:18s (0h:13m:7s left)
+Iteration 200 / LogL: -374633.721 / Time: 0h:28m:27s (0h:11m:34s left)
+Log-likelihood cutoff on original alignment: -375101.271
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.994
+Iteration 210 / LogL: -374529.617 / Time: 0h:29m:39s (0h:12m:45s left)
+Iteration 220 / LogL: -374569.220 / Time: 0h:30m:50s (0h:11m:15s left)
+Iteration 230 / LogL: -374497.961 / Time: 0h:31m:54s (0h:9m:44s left)
+Iteration 240 / LogL: -374550.357 / Time: 0h:32m:59s (0h:8m:16s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 247: -374471.533
+Iteration 250 / LogL: -374573.171 / Time: 0h:34m:12s (0h:13m:18s left)
+Log-likelihood cutoff on original alignment: -375101.271
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 260: -374464.050
+Iteration 260 / LogL: -374464.050 / Time: 0h:35m:25s (0h:13m:39s left)
+Iteration 270 / LogL: -374639.555 / Time: 0h:36m:32s (0h:12m:12s left)
+Iteration 280 / LogL: -374626.292 / Time: 0h:37m:43s (0h:10m:48s left)
+Iteration 290 / LogL: -374635.583 / Time: 0h:38m:50s (0h:9m:24s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 292: -374456.215
+Iteration 300 / LogL: -374524.252 / Time: 0h:40m:30s (0h:12m:27s left)
+Log-likelihood cutoff on original alignment: -375101.271
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.985
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 310 / LogL: -374640.763 / Time: 0h:41m:42s (0h:12m:8s left)
+Iteration 320 / LogL: -374644.699 / Time: 0h:42m:55s (0h:10m:45s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 325: -374452.000
+Iteration 330 / LogL: -374547.399 / Time: 0h:44m:9s (0h:12m:44s left)
+Iteration 340 / LogL: -374452.297 / Time: 0h:45m:20s (0h:11m:21s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 343: -374426.649
+Iteration 350 / LogL: -374528.329 / Time: 0h:46m:35s (0h:12m:24s left)
+Log-likelihood cutoff on original alignment: -375059.554
+Iteration 360 / LogL: -374613.627 / Time: 0h:47m:53s (0h:11m:3s left)
+Iteration 370 / LogL: -374497.918 / Time: 0h:49m:5s (0h:9m:42s left)
+Iteration 380 / LogL: -374470.600 / Time: 0h:50m:11s (0h:8m:20s left)
+Iteration 390 / LogL: -374606.905 / Time: 0h:51m:17s (0h:6m:58s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 397: -374426.311
+Iteration 400 / LogL: -374483.568 / Time: 0h:52m:32s (0h:12m:45s left)
+Log-likelihood cutoff on original alignment: -375056.459
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.980
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 410 / LogL: -374447.279 / Time: 0h:53m:48s (0h:11m:49s left)
+Iteration 420 / LogL: -374586.129 / Time: 0h:54m:59s (0h:10m:29s left)
+Iteration 430 / LogL: -374606.588 / Time: 0h:56m:10s (0h:9m:9s left)
+Iteration 440 / LogL: -374458.385 / Time: 0h:57m:25s (0h:7m:50s left)
+Iteration 450 / LogL: -374639.999 / Time: 0h:58m:43s (0h:6m:32s left)
+Log-likelihood cutoff on original alignment: -375056.459
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 455: -374424.617
+Iteration 460 / LogL: -374443.396 / Time: 1h:0m:20s (0h:12m:28s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 463: -374410.028
+Iteration 470 / LogL: -374627.854 / Time: 1h:1m:32s (0h:12m:11s left)
+Iteration 480 / LogL: -374519.611 / Time: 1h:2m:41s (0h:10m:51s left)
+Iteration 490 / LogL: -374666.005 / Time: 1h:3m:51s (0h:9m:31s left)
+Iteration 500 / LogL: -374472.613 / Time: 1h:5m:4s (0h:8m:12s left)
+Log-likelihood cutoff on original alignment: -375056.459
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.981
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 510 / LogL: -374429.374 / Time: 1h:6m:19s (0h:11m:43s left)
+Iteration 520 / LogL: -374464.468 / Time: 1h:7m:30s (0h:10m:24s left)
+Iteration 530 / LogL: -374526.369 / Time: 1h:8m:42s (0h:9m:5s left)
+Iteration 540 / LogL: -374533.599 / Time: 1h:9m:52s (0h:7m:46s left)
+Iteration 550 / LogL: -374481.598 / Time: 1h:10m:59s (0h:6m:27s left)
+Log-likelihood cutoff on original alignment: -375056.459
+Iteration 560 / LogL: -374446.412 / Time: 1h:12m:11s (0h:5m:9s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 564: -374383.890
+Iteration 570 / LogL: -374432.195 / Time: 1h:13m:29s (0h:12m:8s left)
+Iteration 580 / LogL: -374410.109 / Time: 1h:14m:42s (0h:10m:49s left)
+Iteration 590 / LogL: -374451.636 / Time: 1h:15m:56s (0h:9m:32s left)
+Iteration 600 / LogL: -374713.148 / Time: 1h:17m:2s (0h:8m:13s left)
+Log-likelihood cutoff on original alignment: -375056.459
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.981
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 610 / LogL: -374665.075 / Time: 1h:18m:10s (0h:11m:32s left)
+Iteration 620 / LogL: -374537.212 / Time: 1h:19m:27s (0h:10m:15s left)
+Iteration 630 / LogL: -374581.752 / Time: 1h:20m:34s (0h:8m:57s left)
+Iteration 640 / LogL: -374408.154 / Time: 1h:21m:42s (0h:7m:40s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 646: -374380.673
+Iteration 650 / LogL: -374435.296 / Time: 1h:22m:56s (0h:12m:15s left)
+Log-likelihood cutoff on original alignment: -375041.039
+Iteration 660 / LogL: -374460.383 / Time: 1h:24m:6s (0h:10m:58s left)
+Iteration 670 / LogL: -374453.192 / Time: 1h:25m:19s (0h:9m:41s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 678: -374362.485
+Iteration 680 / LogL: -374495.138 / Time: 1h:26m:36s (0h:12m:29s left)
+Iteration 690 / LogL: -374398.974 / Time: 1h:27m:46s (0h:11m:12s left)
+Iteration 700 / LogL: -374378.131 / Time: 1h:28m:55s (0h:9m:55s left)
+Log-likelihood cutoff on original alignment: -375041.039
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.984
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 710 / LogL: -374675.963 / Time: 1h:30m:11s (0h:11m:26s left)
+Iteration 720 / LogL: -374472.461 / Time: 1h:31m:20s (0h:10m:9s left)
+Iteration 730 / LogL: -374563.092 / Time: 1h:32m:32s (0h:8m:52s left)
+Iteration 740 / LogL: -374489.503 / Time: 1h:33m:45s (0h:7m:36s left)
+Iteration 750 / LogL: -374372.364 / Time: 1h:34m:59s (0h:6m:20s left)
+Log-likelihood cutoff on original alignment: -375037.980
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 759: -374357.354
+Iteration 760 / LogL: -374614.902 / Time: 1h:36m:18s (0h:12m:33s left)
+Iteration 770 / LogL: -374409.407 / Time: 1h:37m:31s (0h:11m:16s left)
+Iteration 780 / LogL: -374395.659 / Time: 1h:38m:43s (0h:10m:0s left)
+Iteration 790 / LogL: -374593.289 / Time: 1h:39m:56s (0h:8m:44s left)
+Iteration 800 / LogL: -374419.869 / Time: 1h:41m:8s (0h:7m:27s left)
+Log-likelihood cutoff on original alignment: -375037.980
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.982
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 810 / LogL: -374421.391 / Time: 1h:42m:19s (0h:11m:22s left)
+Iteration 820 / LogL: -374526.670 / Time: 1h:43m:33s (0h:10m:6s left)
+Iteration 830 / LogL: -374398.497 / Time: 1h:44m:46s (0h:8m:50s left)
+Iteration 840 / LogL: -374361.244 / Time: 1h:45m:57s (0h:7m:34s left)
+Iteration 850 / LogL: -374442.738 / Time: 1h:47m:12s (0h:6m:18s left)
+Log-likelihood cutoff on original alignment: -375037.980
+Iteration 860 / LogL: -374437.842 / Time: 1h:48m:22s (0h:5m:2s left)
+Iteration 870 / LogL: -374495.072 / Time: 1h:49m:35s (0h:3m:46s left)
+Iteration 880 / LogL: -374372.453 / Time: 1h:50m:47s (0h:2m:31s left)
+Iteration 890 / LogL: -374447.576 / Time: 1h:51m:59s (0h:1m:15s left)
+Iteration 900 / LogL: -374446.395 / Time: 1h:53m:12s (0h:0m:0s left)
+Log-likelihood cutoff on original alignment: -375037.980
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.981
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 910 / LogL: -374399.542 / Time: 1h:54m:22s (0h:11m:19s left)
+Iteration 920 / LogL: -374574.267 / Time: 1h:55m:39s (0h:10m:3s left)
+Iteration 930 / LogL: -374538.687 / Time: 1h:56m:57s (0h:8m:48s left)
+Iteration 940 / LogL: -374556.155 / Time: 1h:58m:7s (0h:7m:32s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 944: -374356.909
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 947: -374356.477
+Iteration 950 / LogL: -374592.506 / Time: 1h:59m:26s (0h:12m:12s left)
+Log-likelihood cutoff on original alignment: -375037.980
+Iteration 960 / LogL: -374500.412 / Time: 2h:0m:44s (0h:10m:57s left)
+Iteration 970 / LogL: -374400.051 / Time: 2h:1m:57s (0h:9m:41s left)
+Iteration 980 / LogL: -374397.184 / Time: 2h:3m:11s (0h:8m:25s left)
+Iteration 990 / LogL: -374449.424 / Time: 2h:4m:21s (0h:7m:9s left)
+Iteration 1000 / LogL: -374445.231 / Time: 2h:5m:34s (0h:5m:54s left)
+Log-likelihood cutoff on original alignment: -375037.980
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.983
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+WARNING: bootstrap analysis did not converge. You should rerun with higher number of iterations (-nm option)
+TREE SEARCH COMPLETED AFTER 1001 ITERATIONS / Time: 2h:5m:42s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -374356.477
+Optimal log-likelihood: -374356.477
+Rate parameters:  A-C: 1.20150  A-G: 5.15632  A-T: 2.20405  C-G: 0.25601  C-T: 5.04826  G-T: 1.00000
+Base frequencies:  A: 0.162  C: 0.338  G: 0.336  T: 0.164
+Parameters optimization took 1 rounds (1.412 sec)
+BEST SCORE FOUND : -374356.477
+Creating bootstrap support values...
+Split supports printed to NEXUS file /tmp/IQTREE/rJ_QwREGDJ/iqt.splits.nex
+Total tree length: 4.430
+
+Total number of iterations: 1001
+CPU time used for tree search: 21331.562 sec (5h:55m:31s)
+Wall-clock time used for tree search: 7511.029 sec (2h:5m:11s)
+Total CPU time used: 21424.465 sec (5h:57m:4s)
+Total wall-clock time used: 7544.883 sec (2h:5m:44s)
+
+Computing bootstrap consensus tree...
+Reading input file /tmp/IQTREE/rJ_QwREGDJ/iqt.splits.nex...
+242 taxa and 1822 splits.
+Consensus tree written to /tmp/IQTREE/rJ_QwREGDJ/iqt.contree
+Reading input trees file /tmp/IQTREE/rJ_QwREGDJ/iqt.contree
+Log-likelihood of consensus tree: -374357.851
+
+Analysis results written to: 
+  IQ-TREE report:                /tmp/IQTREE/rJ_QwREGDJ/iqt.iqtree
+  Maximum-likelihood tree:       /tmp/IQTREE/rJ_QwREGDJ/iqt.treefile
+  Likelihood distances:          /tmp/IQTREE/rJ_QwREGDJ/iqt.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          /tmp/IQTREE/rJ_QwREGDJ/iqt.splits.nex
+  Consensus tree:                /tmp/IQTREE/rJ_QwREGDJ/iqt.contree
+  Screen log file:               /tmp/IQTREE/rJ_QwREGDJ/iqt.log
+
+Date and Time: Tue Sep 28 11:27:52 2021

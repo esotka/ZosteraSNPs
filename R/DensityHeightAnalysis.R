@@ -4,6 +4,7 @@
 ## spatially paired with our genetic sampling 
 #####################################################
 library(lattice)
+library(lmerTest)
 library(ggplot2)
 library(car) # Anova
 library(gridExtra) # gridArrange
@@ -19,13 +20,15 @@ dat <- dat.all[dat.all$month=="June",]
 dat$depth <- ifelse(dat$depth=="DP","Deep","Shallow")
 dat$biomass <- as.numeric(dat$biomass)
 meta <- data.frame(
-  site = c("DC","LP","NB","WB"),
-  site.nice = factor(c("Curlew","Lynch","Niles","West")))
+  site = c("DC","LP","WB","NB"),
+  site.nice = c("Curlew","Lynch","West","Niles"))
 dat$site.nice <- meta$site.nice[match(dat$site,meta$site)]
+dat$site.nice <- factor(dat$site.nice)
+dat$site.nice <- factor(dat$site.nice,levels=levels(dat$site.nice)[c(1,2,4,3)])
 dat$siteDepth <- paste(dat$site.nice,dat$depth,sep="_")
 
 # linear model - residusals are not 
-print(histogram(~total.density | site+depth,data = dat,col="grey",breaks=20))
+print(histogram(~total.density | site.nice+depth,data = dat,col="grey",breaks=20))
 m1 <- lm(total.density~factor(site)*factor(depth),dat)
 print(anova(m1))
 
@@ -98,9 +101,11 @@ dat.all <- read.csv("data/perm.quad.veg.ht.2019.csv")
 dat <- dat.all[dat.all$Date=="June",]
 dat$depth <- ifelse(dat$depth=="DP","Deep","Shallow")
 meta <- data.frame(
-  site = c("DC","LP","NB","WB"),
-  site.nice = factor(c("Curlew","Lynch","Niles","West")))
+  site = c("DC","LP","WB","NB"),
+  site.nice = c("Curlew","Lynch","West","Niles"))
 dat$site.nice <- meta$site.nice[match(dat$site,meta$site)]
+dat$site.nice <- factor(dat$site.nice)
+dat$site.nice <- factor(dat$site.nice,levels=levels(dat$site.nice)[c(1,2,4,3)])
 dat$siteDepth <- paste(dat$site.nice,dat$depth,sep="_")
 
 print(aggregate(dat$height,by=list(dat$site.nice,dat$depth),mean,na.rm=T))
