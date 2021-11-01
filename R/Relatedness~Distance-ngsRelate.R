@@ -27,6 +27,15 @@ m2 <- m[rownames(m)%in%env$quad.name,colnames(m)%in%env$quad.name]
 m3 <- m2[lower.tri(m2)]
 
 ### ngsRelate  "rab"
+### commands from ngsRelate
+### see https://github.com/ANGSD/NgsRelate
+### First we generate a file with allele frequencies (angsdput.mafs.gz) and a file with genotype likelihoods (angsdput.glf.gz).
+#angsd -b DD_43_bamfiles -gl 2 -domajorminor 1 -snp_pval 1e-6 -domaf 1 -minmaf 0.05 -doGlf 3 -rf zos.393ind.HWE.99.forANGSD.loci19433.txt -out DD
+### Then we extract the frequency column from the allele frequency file and remove the header (to make it in the format NgsRelate needs)
+#zcat DD.mafs.gz | cut -f5 |sed 1d > DD_freq
+### run NgsRelate The output should be a file called newres that contains the output for all pairs
+#./ngsRelate -g DD.glf.gz -n 43 -f DD_freq -O DD_newres
+
 
 a <- c("DD",
        "DS",

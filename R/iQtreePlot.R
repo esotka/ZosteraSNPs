@@ -3,6 +3,9 @@ library(ape)
 library(scales)
 pdf("output/iQtree.pdf")
 rm(list=ls())
+###############
+### Adults ####
+###############
 tr <- read.tree('data/fasta/iqtall/iqt.contree')
 plot(tr,"unrooted",show.tip.label=F)
 site <- factor(substr(tr$tip.label,1,1))
@@ -24,4 +27,24 @@ text("Lynch-Deep",x=0.18,y=0.115)
 text("Lynch-Shallow",x=0.17026156,y=0.033569727)
 text("West-Deep",x=0.185,y=0.14)
 text("West-Shallow",x=0.15067518,y=0.16)
+
+###############
+### Seeds ####
+###############
+
+tr <- read.tree('data/fasta/iqtall_seeds/iqt.contree')
+plot(tr,"unrooted",show.tip.label=F)
+site <- factor(substr(tr$tip.label,1,1))
+depth <- factor(substr(tr$tip.label,2,2))
+cols <- alpha(c("blue","purple","black","red"),.5)[site]
+print(levels(site)) # blue = Curlew; purple = Lynch; black = Niles; red = West 
+pts <- c(19,15)[depth]
+print(levels(depth)) # circle = Deep; squares = Shallow
+tiplabels(cex=1,col=cols,pch=pts)
+nodes.to.show <- c(98,141,143)
+nodelabels(text=tr$node.label[nodes.to.show-95],node = nodes.to.show,frame = "c",cex=.5,bg="white")
+text("West",x=0.0,y=0.15)
+text("Curlew",x=0,y=0.05)
+text("Lynch",x=0.15,y=0.15)
+text("Niles",x=0.17,y=0.09)
 dev.off()
