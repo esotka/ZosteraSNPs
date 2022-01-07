@@ -213,7 +213,7 @@ anova(mod)
 site.depth.unique <- unique(rab$site_depth)
 out.stats <- c()
 pdf("output/Relatedness~Distance-ngsRelate-final.pdf",height=6,width=10)
-par(mfcol=c(2,4),mai=c(.3,.3,.1,.1), c(2,1,0,0))
+par(mfcol=c(2,4),mai=c(0.3,0.3,0.1,0.1), c(2,1,0,0))
 for (j in 1:length(site.depth.unique))
 {
   tmp <- data.frame(x=rab$m[rab$site_depth==site.depth.unique[j]]
@@ -224,5 +224,49 @@ for (j in 1:length(site.depth.unique))
   plot(tmp$y~tmp$x,xlim=c(0,40),ylim=c(0,1),ylab="",xlab="")#,xaxt="n",yaxt="n")
   lines(x.predict,rab.predict,col="red",lwd=4)
   mtext(site.depth.unique[j],line=-2)
+}
+dev.off()
+
+#### make a spatial autocorrelation plot ####
+
+library(PopGenReport)
+
+spaut.out <- list()
+spaut.perm <- list()
+for (i in 1:length(site.depth.unique))
+{
+  tmp <- rab[rab$site_depth==site.depth.unique[i],]
+  tmp.names <- sort(unique(c(tmp$a,tmp$b)))
+  tmp <- rbind(tmp,data.frame(a=tmp.names,b=tmp.names,rab=1,site=unique(tmp$site),depth=unique(tmp$depth),site_depth=unique(tmp$site_depth),m=0))
+  tmp2 <- tmp; tmp2$a <- tmp2$b; tmp2$b <- tmp$a 
+  tmp3 <- cbind(tmp,tmp2)
+  rab.out <- matrix(nrow=length(tmp.names),ncol=length(tmp.names))
+  rab.out <- data.frame(rab.out); colnames(rab.out) <- tmp.names; rownames(rab.out) <- tmp.names
+  m.out <- matrix(nrow=length(tmp.names),ncol=length(tmp.names))
+  m.out <- data.frame(m.out); colnames(m.out) <- tmp.names; rownames(m.out) <- tmp.names
+  
+  for(j in 1:length(tmp.names))
+  {
+    for (k in 1:length(tmp.names))
+    {
+      rab.out[j,k] <- tmp$rab[(tmp.names[j]==tmp$a & tmp.names[k]==tmp$b) | (tmp.names[j]==tmp$b & tmp.names[k]==tmp$a)]
+      m.out[j,k] <- tmp$m[(tmp.names[j]==tmp$a & tmp.names[k]==tmp$b) | (tmp.names[j]==tmp$b & tmp.names[k]==tmp$a)]
+      
+    }
+  }
+  rab.out2 <- as.matrix(rab.out); diag(rab.out) <- NA
+  m.out2 <- as.matrix(m.out); diag(m.out) <- NA
+  spaut.out[[i]] <- spautocor(rab.out2,m.out2,bins=20)
+
+}
+names(spaut.out) <- site.depth.unique
+pdf("output/Autocorrelation.pdf",width=10,height=4)
+par(mfcol=c(2,4),mai=c(0.3,0.3,0.1,0.1), c(2,1,0,0))
+for(n in 1:8)
+{
+  #points(x=spaut.out[[n]]$bin,y=spaut.out[[n]]$r,type="b")
+  plot(x=spaut.out[[n]]$bin,y=spaut.out[[n]]$r,type="b",xlim=c(0,50),ylim=c(-.2,.3),ylab="r",xlab="meters",main=names(spaut.out[n]))
+  segments(-1,0,50,0,lty="dashed")
+  
 }
 dev.off()

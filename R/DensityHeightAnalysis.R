@@ -53,7 +53,7 @@ print(aggregate(dat$biomass,by=list(dat$site.nice,dat$depth),mean,na.rm=T))
 
 f2 <- ggplot(dat[complete.cases(dat$biomass),], aes(x=site.nice, y=biomass, fill=depth)) +
   geom_boxplot(outlier.size = NULL) +
-  ylab("Aboveground wetmass (g) / 0.0625 m2") + xlab("") +
+  ylab("Aboveground drymass (g) / 0.0625 m2") + xlab("") +
   theme_classic(base_size=20) + theme(legend.position="none") +  
   scale_fill_grey(start=.75,end=1)
 print(f2)

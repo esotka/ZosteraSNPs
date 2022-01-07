@@ -17,6 +17,8 @@ meta <- data.frame(ind=rownames(dat),
                    quad=substr(rownames(dat),7,8))
 meta$quad <- ifelse(nchar(meta$quad)==1,paste("0",meta$quad,sep=""),meta$quad)
 meta$quad.name <- paste(meta$site.nice,".",meta$depth,meta$grid,"_",meta$quad,sep="")
+meta$site.nice.depth <- paste(meta$site.nice,meta$depth,sep="_")
+meta$site.nice.depth <- factor(meta$site.nice.depth)
 
 
 out <- c()
@@ -127,5 +129,7 @@ for (j in 1:2)
   }
 }
 print(out2.stats)
+
+
 
 

@@ -157,6 +157,8 @@ all.ind <- rbind(all.ind,data.frame(grid=gridIDs[j],
                                     lat=g2$lat))
 }
 
+write.csv(all.ind,"output/IndivLatLon.csv")
+
 ### print them
 pops.unique <- unique(all.ind$pop)
 for (k in 1:4)

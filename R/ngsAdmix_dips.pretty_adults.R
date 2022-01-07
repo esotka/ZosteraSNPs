@@ -2,7 +2,7 @@ rm(list=ls())
 ks <- c("k02run1","k03run1","k04run1","k05run1","k06run1","k07run1","k08run1","k09run1","k10run1")
 
 ############# ENV DATA ##############
-inds <- readLines("data/ind294adults_clean")
+inds <- readLines("data/ind99_seeds")
 env <- data.frame(ind=substr(inds,1,7),
                   adult.seed=substr(inds,7,7),
                   site=substr(inds,1,1),
@@ -15,7 +15,7 @@ env$site.nice[env$site.nice=="W"] <- "West"
 env$site.nice[env$site.nice=="L"] <- "Lynch"
 env$site.depth <- paste(env$site.nice,env$SvD,sep="_")
 env$site.depth <- factor(env$site.depth)
-env$site.depth <- factor(env$site.depth,levels=levels(env$site.depth)[c(1:4,7,8,5,6)])
+env$site.depth <- factor(env$site.depth,levels=levels(env$site.depth)[c(1:3,6:7,4:5)])
 
 kcol <- c("black", #1
           "red",#2
@@ -38,13 +38,13 @@ colorder <- list(
   c(6,5,3,1,7,9,2,8,4), #ks=9
   c(3,8,2,9,1,6,10,5,4,7)) #ks=10
 
-pdf('output/ngsAdmix_dips.pretty-adults.pdf',width=12,height=10)
+pdf('output/ngsAdmix_dips.pretty-seeds.pdf',width=12,height=10)
 par(mfrow=c(11,1),mar=c(0,0,0,0),xpd = TRUE)
 
 
 for (k in 1:9)#length(ks))
 {
-  dat <- read.delim(paste("data/NGSadmix-adults/",ks[k],".qopt",sep=""),sep=" ",header = F)
+  dat <- read.delim(paste("data/NGSadmix-seeds/",ks[k],".qopt",sep=""),sep=" ",header = F)
   dat <- dat[,-(dim(dat)[2])]
   dat <- dat[,order(colorder[[k]])]
   dat <- dat[order(env$site.depth),]
