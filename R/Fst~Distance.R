@@ -45,20 +45,19 @@ dat$hab <- factor(dat$hab)
 anova(lm(phiST~hab,dat)) # no significant difference between DD, DS, SS
 
 #Analysis of Variance Table
-#
-#Response: phiST
-#          Df    Sum Sq   Mean Sq F value Pr(>F)
-#hab        2 0.0021507 0.0010753  1.0599 0.3616
-#Residuals 25 0.0253647 0.0010146               
 
+#Response: phiST
+#Df    Sum Sq    Mean Sq F value Pr(>F)
+#hab        2 0.0016999 0.00084996  0.8067 0.4576
+#Residuals 25 0.0263410 0.00105364 
 anova(lm(phiST~hab,dat[!dat$hab=="DS",])) # no significant difference between DD or SS
 
 #Analysis of Variance Table
-#
+
 #Response: phiST
-#          Df    Sum Sq    Mean Sq F value Pr(>F)
-#hab        1 0.0013659 0.00136589  1.8154 0.2076
-#Residuals 10 0.0075239 0.00075239  
+#Df    Sum Sq    Mean Sq F value Pr(>F)
+#hab        1 0.0007992 0.00079917  1.0203 0.3363
+#Residuals 10 0.0078329 0.00078329               
 
 ## we don't have much power to detect differences in the slope of these (low sample size)
 

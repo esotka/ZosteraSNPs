@@ -30,7 +30,10 @@ dat$siteDepth <- paste(dat$site.nice,dat$depth,sep="_")
 # linear model - residusals are not 
 print(histogram(~total.density | site.nice+depth,data = dat,col="grey",breaks=20))
 m1 <- lm(total.density~factor(site)*factor(depth),dat)
-print(anova(m1))
+print(Anova(m1))
+
+htmodel <- lmer(total.density ~ site * depth + (1|perm.quadrat), data = dat, REML = FALSE)
+print(Anova(htmodel))
 
 print(aggregate(dat$total.density,by=list(dat$site.nice,dat$depth),mean))
 
@@ -47,9 +50,11 @@ print(f1)
 #######################################################
 
 print(histogram(~biomass | site+depth,data = dat,col="grey",breaks=20))
-print(anova(lm(biomass~factor(site)*factor(depth),dat)))
+print(Anova(lm(biomass~factor(site)*factor(depth),dat)))
 
 print(aggregate(dat$biomass,by=list(dat$site.nice,dat$depth),mean,na.rm=T))
+htmodel <- lmer(biomass ~ site * depth + (1|perm.quadrat), data = dat, REML = FALSE)
+print(Anova(htmodel))
 
 f2 <- ggplot(dat[complete.cases(dat$biomass),], aes(x=site.nice, y=biomass, fill=depth)) +
   geom_boxplot(outlier.size = NULL) +

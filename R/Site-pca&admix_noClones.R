@@ -35,6 +35,20 @@ geno <- t(geno) # row = ind; col = loci
 
 rownames(geno) <- readLines("data/ind393_clean")
 colnames(geno) <- rownames(gt2)
+#> dim(geno)
+#[1]   393 19432
+### remove clones ###
+
+noClones <- readLines("data/ind245adults_noClones_clean")
+geno <- geno[rownames(geno)%in%noClones,]
+#> dim(geno)
+#[1]   245 19432
+
+#### only include loci that had NAs in <50% of individuals
+prop.ind <- colSums(is.na(geno))/nrow(geno)
+geno <- geno[,prop.ind<=0.5]
+#> dim(geno)
+#[1]   245 12704
 
 ### replace NAs with the most common genotype per locus
 library(parallel)
@@ -48,8 +62,8 @@ out <- mclapply(1:ncol(geno), function(i)
 },mc.cores = 4)
 
 out2 <- as.data.frame(matrix(as.numeric(unlist(out)),nrow=nrow(geno))) # rows = 393 ind cols = loci
-rownames(out2) <- readLines("data/ind393_clean")
-colnames(out2) <- rownames(gt2)
+rownames(out2) <- noClones
+colnames(out2) <- colnames(geno)
 
 # make plots
 pdf("output/Site-pca&admix_noClones.pdf",width=8,height=6)

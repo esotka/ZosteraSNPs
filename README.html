@@ -169,17 +169,36 @@ pre code {
 
 <div id="zosterasnps" class="section level1">
 <h1>ZosteraSNPs</h1>
-<p>This is the SNP dataset for Zostera marina generated in the Sotka laboratory in January 2020 by Cynthia Hays.</p>
-<div id="list-of-individuals-and-loci" class="section level3">
-<h3>List of individuals and loci</h3>
+<p>This is the SNP dataset for Zostera marina generated January 2020</p>
+<div id="angsd-generated-genotype-likelihoods" class="section level3">
+<h3>angsd-generated genotype likelihoods</h3>
 <p><strong><em>data/ind393_clean</em></strong><br />
-<strong><em>data/loci19433</em></strong></p>
+<strong><em>data/loci19433</em></strong><br />
+<strong><em>data/zos.393ind.HWE.99.gl.beagle.gz</em></strong></p>
+</div>
+<div id="genotype-calls-pulled-from-vcf-file" class="section level3">
+<h3>genotype calls pulled from vcf file</h3>
+<p><strong><em>R/SubsetGenotypeCalls.R</em></strong><br />
+<strong><em>data/zos.393ind.HWE.99.loci19433.vcf.gz</em></strong><br />
+<strong><em>data/genotypeCalls.393ind.8684loci.geno</em></strong><br />
+<strong><em>data/ind393_clean</em></strong><br />
+<strong><em>data/loci8684</em></strong></p>
+</div>
+<div id="adult-clone-ids" class="section level3">
+<h3>adult clone IDs</h3>
+<p><strong><em>data/ind245adults_noClones_clean</em></strong><br />
+<strong><em>data/CloneIDs.csv</em></strong></p>
 </div>
 <div id="heterozygosity" class="section level3">
 <h3>Heterozygosity</h3>
-<p><strong><em>data/zos.393ind.HWE.99.calls.forGenind</em></strong><br />
-<strong><em>R/basicStats.R</em></strong><br />
-<strong><em>output/BasicStats.csv</em></strong></p>
+<p><strong><em>R/basicStats_adultsNoClones.R</em></strong><br />
+<strong><em>output/BasicStats_adultsNoClones.csv</em></strong></p>
+</div>
+<div id="create-fasta-from-calls-and-generate-pretty-ml-tree" class="section level3">
+<h3>Create FASTA from calls and generate pretty ML tree</h3>
+<p><strong><em>R/ConvertVCFToFASTA.R</em></strong><br />
+<strong><em>data/393ind8683loc.fas</em></strong><br />
+<strong><em>data/allLoci.txt</em></strong></p>
 </div>
 </div>
 

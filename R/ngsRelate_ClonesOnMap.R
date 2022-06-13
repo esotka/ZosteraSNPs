@@ -82,6 +82,24 @@ for (i in 1:8)
 }
   
 dev.off()  
+
+## how far apart are clones, by site X depth combination
+library(geosphere) # geographic distance distm()
+m <- c()
+for(ii in 1:dim(rab.sub)[1])
+{
+m <- c(m,distm(x=rab.sub[ii,c("a.lon","a.lat")],y=rab.sub[ii,c("b.lon","b.lat")]))
+}
+rab.sub$m <- m
+#Group.1   x.Min. x.1st Qu. x.Median   x.Mean x.3rd Qu.   x.Max.
+#1   cur_d 1.991228  1.991228 1.995614 2.201947  2.206333 2.825331
+#2   cur_s 1.991228  2.000000 2.825331 3.343264  4.117802 8.248334
+#3   lyn_d 1.991228  1.996519 2.006105 2.725374  2.828427 6.325939
+#4   lyn_s 1.991228  1.991228 1.999141 2.367865  2.821178 3.982447
+#5   nil_d 1.998283  1.999571 2.991224 2.990794  3.982447 3.982447
+#6   nil_s 1.998283  3.080197 4.162111 4.162111  5.244025 6.325939
+#7   wes_s 1.993895  1.998283 2.006105 2.541243  2.826105 4.004386
+
   
 ### New list of unique genotypes 
 # manually #
