@@ -47,8 +47,8 @@ rab$site <- substr(rab$a,1,3)
 rab$depth <- substr(rab$a,5,5)
 rab$site_depth <- paste(rab$site,rab$depth,sep="_")
 library(lattice)
-print(histogram(~rab | site + depth,data=rab,col="grey",breaks=40))
-print(histogram(~log(rab+0.000001) | site + depth,data=rab,col="grey",breaks=40))
+print(histogram(~rab,data=rab,col="grey",breaks=40))
+print(histogram(~rab,data=rab,col="grey",breaks=40,ylim=c(0,5)))
 
 # Where are the clones? 
 # here are geographic positions
@@ -65,7 +65,7 @@ rab.sub$b.lon <- latlon$lon[match(rab.sub$b,latlon$quad.name)]
 rab.sub$b.lat <- latlon$lat[match(rab.sub$b,latlon$quad.name)]
 
 pdf("output/ngsRelate_ClonesOnMap=threshold=0.8.pdf",height=6,width=12)
-par(mfcol=c(2,4),mai=c(0.3,0.3,0.1,0.1), c(2,1,0,0))
+par(mfcol=c(2,4),mai=c(0.3,0.3,0.1,0.1), mar=c(2,1,0,0))
 
 site.nice.depth2 <- c("Curlew_D","Curlew_S","Lynch_D","Lynch_S","West_D","West_S","Niles_D","Niles_S")
 
