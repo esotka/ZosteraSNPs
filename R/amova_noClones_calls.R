@@ -29,7 +29,7 @@ env$site.nice.depth <- factor(paste(env$site.nice,env$SvD,sep="_"))
 st.d <- dist(geno)
 habitat <- factor(paste(env$site.nice,env$SvD))
 site <- env$site.nice
-print(m1 <- amova(st.d~site/habitat))
+print(m1 <- pegas::amova(st.d~site/habitat))
 write.pegas.amova(m1,"output/amova.method1-calls_noClones.csv")
 sig2 <- setNames(m1$varcomp$sigma2,rownames(m1$varcomp))
 print(getPhi(sig2))
@@ -44,7 +44,7 @@ for (k in 1:dim(pw)[2])
   tmp <- geno[env$site.nice.depth%in%pw[,k],]
   st.d <- dist(tmp)
   pops <- env$site.nice.depth[env$site.nice.depth%in%pw[,k]]
-  m1 <- amova(st.d~pops)
+  m1 <- pegas::amova(st.d~pops)
   p <- m1$varcomp[[2]][1]
   pw.stats.long[[k]] <- m1; names(pw.stats.long)[k] <- paste(pw[1,k],pw[2,k],sep="-")
   sig2 <- setNames(m1$varcomp$sigma2,rownames(m1$varcomp))

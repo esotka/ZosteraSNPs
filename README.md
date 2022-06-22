@@ -35,15 +35,19 @@ This is the SNP dataset for Zostera marina generated January 2020
 ***R/basicStats_adultsNoClones.R***  
 ***output/BasicStats_adultsNoClones.csv***  
 
-### Create FASTA from calls and generate pretty ML tree ###  
+### Create FASTA from calls and generate Maximum Likelihood tree ###  
 ***R/ConvertVCFToFASTA.R***  
 ***R/iQtreePlot.R***  
 ***data/fasta/393ind8683loc.fas***  
 ***data/fasta/245ind8683loc_noClones_foriQtree.fas***  
 ***data/fasta/99seeds_8683loc_foriQtree.fas***  
 
-### AMOVA ###
+### Analysis of Molecular Variance (AMOVA) ###
+***R/amova_noClones_calls.R***  
+***output/amova.method1-calls_noClones.csv***  
+***output/amova.method1-calls_noClones-pairwisePhiSt.csv***  
 
+### Admixture analysis ###  
 
 
 # Commands from other programs #
