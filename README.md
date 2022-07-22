@@ -34,7 +34,7 @@ This is the plant trait and SNP dataset for Zostera marina
 ***data/ind393_clean***  
 ***data/loci8684***    
 
-### Analysis of clones (as determined by ngsRelate) ###
+### Analysis of clonal adults and relatedness (as determined by ngsRelate)
 ***R/ngsRelate_ClonesOnMap.R***  
 ***R/Relatedness~Distance-ngsRelate.R***  
 ***data/ngsRelate/FILES***  The output from ngsRelate  
@@ -43,7 +43,13 @@ This is the plant trait and SNP dataset for Zostera marina
 ***ngsRelate_ClonesOnMap=threshold=0.8.pdf***  
 ***output/Relatedness~Distance-ngsRelate-final.pdf***  
 
-### Basic pop gen statistics ###    
+### SPAGHEDI correlogram of adults
+***R/CreateSpaghediFiles.R***  
+***R/SpagediSGS_noClones_10categories.R***  
+***data/allSite.Spagedi.out_noClones_10categories.txt***  
+***output/SpagediSGS_noClones_10categories.pdf***  
+
+### Basic pop gen statistics     
 ***R/basicStats_adultsNoClones.R***  
 ***output/BasicStats_adultsNoClones.csv***  
 
@@ -54,13 +60,18 @@ This is the plant trait and SNP dataset for Zostera marina
 ***data/fasta/XXX***  
 ***data/fasta/XXX***  
 
-### Analysis of Molecular Variance (AMOVA) ###
+### Analysis of Molecular Variance (AMOVA) and Pairwise PhiST
 ***R/amova_noClones_calls.R***  
 ***data/Adults_noClones.beagle.gz***  
 ***output/amova.method1-calls_noClones.csv***  
 ***output/amova.method1-calls_noClones-pairwisePhiSt.csv***  
 
-### Admixture analysis - adults and seeds ###  
+### Isolation by distance
+***R/Fst~Distance.R***  
+***output/amova.method1-calls_noClones-pairwisePhiSt.csv***  
+***output/Fst~Distance.pdf***  
+
+### Admixture analysis - adults and seeds   
 ***R/ngsAdmix_dips.pretty_adults-NoClones.R***  
 ***R/ngsAdmix_dips.pretty_seeds.R***  
 ***data/ind245adults_noClones_clean***  
@@ -70,7 +81,22 @@ This is the plant trait and SNP dataset for Zostera marina
 ***output/ngsAdmix_dips.pretty-adults-NoClones.pdf***  
 ***output/ngsAdmix_dips.pretty-seeds.pdf***  
 
-### DAPC assignment - seeds & adults ### 
+### Site-specific PCA and admix plots
+***R/Site-pca&admix_noClones.R***  
+***data/zos.393ind.HWE.99.loci19433.vcf.gz***  
+***data/ind393_clean***  
+***data/ind245adults_noClones_clean***  
+***data/loci8684***    
+***data/ngsadmix-noClones-site/***  
+***output/Site-pca&admix_noClones.pdf***    
+
+### Relatedness of seeds within and among grids and cores (NGSrelate)
+***R/Relatedness-seeds-ngsRelate.R***  
+***data/Seed ID to core.xlsx***  
+***data/ngsRelate/***  
+***output/Relatedness~Core-ngsRelate_seeds.pdf***  
+
+### DAPC assignment - seeds & adults  
 ***R/SeedAssignment-DAPC.R***  
 ***data/genotypeCalls.393ind.8684loci.geno***  
 ***output/SeedAssignment-DAPC.txt***  

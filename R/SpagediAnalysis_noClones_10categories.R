@@ -43,7 +43,7 @@ p <- matrix(p,nrow=ncat,ncol=8,byrow=T)
 p <- ifelse(p<=0.05,"*","")
 
 pdf("output/SpagediSGS_noClones_10categories.pdf",width=10,height=4)
-par(mfcol=c(2,4),mai=c(0.3,0.3,0.1,0.1), c(2,1,0,0))
+par(mfcol=c(2,4),mai=c(0.3,0.3,0.1,0.1))
 for(n in 1:8)
 {
   plot(x=mean.dist[,n],y=xbar[,n],type="b",ylim=c(-.1,.2),xlim=c(0,45),ylab="kinship",xlab="meters",pch=20,cex=1.2)

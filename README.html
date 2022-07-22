@@ -367,7 +367,7 @@ pre code {
 
 <div id="zosterasnps" class="section level1">
 <h1>ZosteraSNPs</h1>
-<p>This is the SNP dataset for Zostera marina generated January 2020</p>
+<p>This is the plant trait and SNP dataset for Zostera marina</p>
 <div id="map-of-sites-and-geographic-distances" class="section level3">
 <h3>map of sites and geographic distances</h3>
 <p><strong><em>R/SiteMaps.R</em></strong><br />
@@ -406,8 +406,9 @@ the output dataset<br />
 <strong><em>data/ind393_clean</em></strong><br />
 <strong><em>data/loci8684</em></strong></p>
 </div>
-<div id="analysis-of-clones-as-determined-by-ngsrelate" class="section level3">
-<h3>Analysis of clones (as determined by ngsRelate)</h3>
+<div id="analysis-of-clonal-adults-and-relatedness-as-determined-by-ngsrelate" class="section level3">
+<h3>Analysis of clonal adults and relatedness (as determined by
+ngsRelate)</h3>
 <p><strong><em>R/ngsRelate_ClonesOnMap.R</em></strong><br />
 <strong><em>R/Relatedness~Distance-ngsRelate.R</em></strong><br />
 <strong><em>data/ngsRelate/FILES</em></strong> The output from
@@ -417,6 +418,13 @@ unique genets to use<br />
 <strong><em>ListOfClones.txt</em></strong><br />
 <strong><em>ngsRelate_ClonesOnMap=threshold=0.8.pdf</em></strong><br />
 <strong><em>output/Relatedness~Distance-ngsRelate-final.pdf</em></strong></p>
+</div>
+<div id="spaghedi-correlogram-of-adults" class="section level3">
+<h3>SPAGHEDI correlogram of adults</h3>
+<p><strong><em>R/CreateSpaghediFiles.R</em></strong><br />
+<strong><em>R/SpagediSGS_noClones_10categories.R</em></strong><br />
+<strong><em>data/allSite.Spagedi.out_noClones_10categories.txt</em></strong><br />
+<strong><em>output/SpagediSGS_noClones_10categories.pdf</em></strong></p>
 </div>
 <div id="basic-pop-gen-statistics" class="section level3">
 <h3>Basic pop gen statistics</h3>
@@ -431,12 +439,18 @@ unique genets to use<br />
 <strong><em>data/fasta/XXX</em></strong><br />
 <strong><em>data/fasta/XXX</em></strong></p>
 </div>
-<div id="analysis-of-molecular-variance-amova" class="section level3">
-<h3>Analysis of Molecular Variance (AMOVA)</h3>
+<div id="analysis-of-molecular-variance-amova-and-pairwise-phist" class="section level3">
+<h3>Analysis of Molecular Variance (AMOVA) and Pairwise PhiST</h3>
 <p><strong><em>R/amova_noClones_calls.R</em></strong><br />
 <strong><em>data/Adults_noClones.beagle.gz</em></strong><br />
 <strong><em>output/amova.method1-calls_noClones.csv</em></strong><br />
 <strong><em>output/amova.method1-calls_noClones-pairwisePhiSt.csv</em></strong></p>
+</div>
+<div id="isolation-by-distance" class="section level3">
+<h3>Isolation by distance</h3>
+<p><strong><em>R/Fst~Distance.R</em></strong><br />
+<strong><em>output/amova.method1-calls_noClones-pairwisePhiSt.csv</em></strong><br />
+<strong><em>output/Fst~Distance.pdf</em></strong></p>
 </div>
 <div id="admixture-analysis---adults-and-seeds" class="section level3">
 <h3>Admixture analysis - adults and seeds</h3>
@@ -448,6 +462,24 @@ unique genets to use<br />
 <strong><em>data/NGSadmix-seeds/</em>opt</strong>*<br />
 <strong><em>output/ngsAdmix_dips.pretty-adults-NoClones.pdf</em></strong><br />
 <strong><em>output/ngsAdmix_dips.pretty-seeds.pdf</em></strong></p>
+</div>
+<div id="site-specific-pca-and-admix-plots" class="section level3">
+<h3>Site-specific PCA and admix plots</h3>
+<p><strong><em>R/Site-pca&amp;admix_noClones.R</em></strong><br />
+<strong><em>data/zos.393ind.HWE.99.loci19433.vcf.gz</em></strong><br />
+<strong><em>data/ind393_clean</em></strong><br />
+<strong><em>data/ind245adults_noClones_clean</em></strong><br />
+<strong><em>data/loci8684</em></strong><br />
+<strong><em>data/ngsadmix-noClones-site/</em></strong><br />
+<strong><em>output/Site-pca&amp;admix_noClones.pdf</em></strong></p>
+</div>
+<div id="relatedness-of-seeds-within-and-among-grids-and-cores-ngsrelate" class="section level3">
+<h3>Relatedness of seeds within and among grids and cores
+(NGSrelate)</h3>
+<p><strong><em>R/Relatedness-seeds-ngsRelate.R</em></strong><br />
+<strong><em>data/Seed ID to core.xlsx</em></strong><br />
+<strong><em>data/ngsRelate/</em></strong><br />
+<strong><em>output/Relatedness~Core-ngsRelate_seeds.pdf</em></strong></p>
 </div>
 <div id="dapc-assignment---seeds-adults" class="section level3">
 <h3>DAPC assignment - seeds &amp; adults</h3>

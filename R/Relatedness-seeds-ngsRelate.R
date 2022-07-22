@@ -1,5 +1,5 @@
 ### ngsRelate results - seeds
-
+rm(list=ls())
 a <- c("DS_seeds",
        "WS_seeds",
        "NS_seeds")
@@ -103,7 +103,7 @@ pdf("output/Relatedness~Core-ngsRelate_seeds.pdf")
 f <- ggplot(rab, aes(x=site, y=rab, fill=GridCoreCombo)) +
   geom_boxplot(outlier.size = NULL) +
   ylab("rab") + xlab("") +
-  theme_classic(base_size=20) + theme(legend.position="right",legend.title=element_blank()) +
+  theme_classic(base_size=20) + theme(legend.position=c(0.8,0.8),legend.title=element_blank()) +
   scale_fill_grey(start=.75,end=1)
 print(f)
 mod <- glm(rab~GridCoreCombo*site,data=rab,family="poisson")
@@ -124,7 +124,7 @@ print(anova(mod))
 f <- ggplot(rab[rab$GridCoreCombo%in%c("withinCore","betweenCore"),], aes(x=site, y=rab, fill=GridCoreCombo)) +
   geom_boxplot(outlier.size = NULL) +
   ylab("rab") + xlab("") +
-  theme_classic(base_size=20) + theme(legend.position="right",legend.title=element_blank()) +
+  theme_classic(base_size=20) + theme(legend.position=c(0.8,0.8),legend.title=element_blank()) +
   scale_fill_grey(start=.75,end=1)
 print(f)
 dev.off()
