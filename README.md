@@ -4,11 +4,17 @@ This is the SNP dataset for Zostera marina generated January 2020
 
 ### map of sites and geographic distances
 ***R/SiteMaps.R***  
+***data/NSDE41661/***  
 ***output/GeographicDistanceIndiv.csv***  
 ***output/IndivLatLon.csv***  
 ***output/SiteQuadratLatLon.csv***  
 ***output/SiteMaps_coastline.pdf***  
 ***output/SiteMaps.pdf***  
+
+### map of sites and admix results
+***R/SiteMaps_NGSadmix.R***  
+***data/NSDE41661/***  
+***output/SiteMaps_NGSadmix.pdf***  
 
 ### angsd-generated genotype likelihoods in beagle format  
 ***data/ind393_clean***  
@@ -38,17 +44,24 @@ This is the SNP dataset for Zostera marina generated January 2020
 ### Create FASTA from calls and generate Maximum Likelihood tree ###  
 ***R/ConvertVCFToFASTA.R***  
 ***R/iQtreePlot.R***  
-***data/fasta/393ind8683loc.fas***  
-***data/fasta/245ind8683loc_noClones_foriQtree.fas***  
-***data/fasta/99seeds_8683loc_foriQtree.fas***  
+***data/fasta/XXX***  
+***data/fasta/XXX***  
+***data/fasta/XXX***  
 
 ### Analysis of Molecular Variance (AMOVA) ###
 ***R/amova_noClones_calls.R***  
 ***output/amova.method1-calls_noClones.csv***  
 ***output/amova.method1-calls_noClones-pairwisePhiSt.csv***  
 
-### Admixture analysis ###  
-
+### Admixture analysis - adults and seeds ###  
+***R/ngsAdmix_dips.pretty_adults-NoClones.R***  
+***R/ngsAdmix_dips.pretty_seeds.R***  
+***data/ind245adults_noClones_clean***  
+***data/ind99_seeds***  
+***data/ngsadmix-noClones/*opt***  
+***data/NGSadmix-seeds/*opt***  
+***output/ngsAdmix_dips.pretty-adults-NoClones.pdf***  
+***output/ngsAdmix_dips.pretty-seeds.pdf***  
 
 # Commands from other programs #
 ### ngsRelate ###
