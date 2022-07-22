@@ -1,7 +1,21 @@
 ### DAPC - cluster and then assign
 rm(list=ls())
 library(adegenet)
-dat <- read.delim('data/Adults_noClones.beagle.gz',sep="\t",header=T)
+#dat <- read.delim('data/Adults_noClones.beagle.gz',sep="\t",header=T)
+#ninds <- 245
+#aa <- dat[,seq(1,3*ninds,3)+3]
+#ab <- dat[,seq(1,3*ninds,3)+4]
+#bb <- dat[,seq(1,3*ninds,3)+5]
+#tgenest <- c()
+#aa.prob <- aa*0
+#ab.prob <- ab*1
+#bb.prob <- bb*2
+#tot.prob <- aa.prob+ab.prob+bb.prob
+#tot.prob.tr <- t(tot.prob) # no marker INFO; row = ind; col = loci
+
+## convert beagle GL to mpgl
+
+dat <- read.delim('data/zos.393ind.HWE.99.gl.beagle.gz',sep="\t",header=T)
 ninds <- 245
 aa <- dat[,seq(1,3*ninds,3)+3]
 ab <- dat[,seq(1,3*ninds,3)+4]
@@ -10,9 +24,9 @@ tgenest <- c()
 aa.prob <- aa*0
 ab.prob <- ab*1
 bb.prob <- bb*2
-tot.prob <- aa.prob+ab.prob+bb.prob
-tot.prob.tr <- t(tot.prob) # no marker INFO; row = ind; col = loci
+gmat <- aa.prob+ab.prob+bb.prob # row = loci; col = ind
 inds <- readLines("data/ind245adults_noClones_clean")
+colnames(gmat) <- inds
 #inds[inds=="LD3_012A.bwa.bam"] <- "LD3_12A.bwa.bam"
 
 ############# ENV DATA ##############
@@ -31,9 +45,10 @@ env$site.depth <- paste(env$site.nice,env$SvD,sep="_")
 env$site.depth <- factor(env$site.depth)
 env$site.depth <- factor(env$site.depth,levels=levels(env$site.depth)[c(1:4,7,8,5,6)])
 
-pdf("output/DAPC-ClusterThenAssign.pdf")
+#pdf("output/DAPC-ClusterThenAssign.pdf")
 ## using pops as apriori - adults
-dapc.pop <- dapc(tot.prob.tr,env$site.depth,n.pca=20,n.da=100)
+geno.a <- geno[rownames(geno)%in%env$ind,]
+dapc.a <- dapc(geno.a,env$site.depth,n.pca=20,n.da=100)
 cols.8 <- c("black","black","red","red","blue","blue","purple","purple")
 scatter(dapc.pop,col=transp(cols.8,0.7),cex=1.5,cstar=0,scree.da=F,cell=0,clab=0,solid=.4,mstree=F,leg=T,lwd=3)
 points(dapc.pop$grp.coord[,1], dapc.pop$grp.coord[,2], pch=4,

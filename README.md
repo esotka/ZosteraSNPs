@@ -1,6 +1,6 @@
 # ZosteraSNPs
 
-This is the SNP dataset for Zostera marina generated January 2020  
+This is the plant trait and SNP dataset for Zostera marina   
 
 ### map of sites and geographic distances
 ***R/SiteMaps.R***  
@@ -15,6 +15,12 @@ This is the SNP dataset for Zostera marina generated January 2020
 ***R/SiteMaps_NGSadmix.R***  
 ***data/NSDE41661/***  
 ***output/SiteMaps_NGSadmix.pdf***  
+
+### plant traits 
+***R/DensityHeightAnalysis.R***  
+***data/perm.quad.density.2019.csv***  
+***data/perm.quad.veg.ht.2019.csv***  
+***output/DensityHeight.png***  
 
 ### angsd-generated genotype likelihoods in beagle format  
 ***data/ind393_clean***  
@@ -50,6 +56,7 @@ This is the SNP dataset for Zostera marina generated January 2020
 
 ### Analysis of Molecular Variance (AMOVA) ###
 ***R/amova_noClones_calls.R***  
+***data/Adults_noClones.beagle.gz***  
 ***output/amova.method1-calls_noClones.csv***  
 ***output/amova.method1-calls_noClones-pairwisePhiSt.csv***  
 
@@ -62,6 +69,12 @@ This is the SNP dataset for Zostera marina generated January 2020
 ***data/NGSadmix-seeds/*opt***  
 ***output/ngsAdmix_dips.pretty-adults-NoClones.pdf***  
 ***output/ngsAdmix_dips.pretty-seeds.pdf***  
+
+### DAPC assignment - seeds & adults ### 
+***R/SeedAssignment-DAPC.R***  
+***data/genotypeCalls.393ind.8684loci.geno***  
+***output/SeedAssignment-DAPC.txt***  
+***output/SeedAssignment-DAPC.pdf***  
 
 # Commands from other programs #
 ### ngsRelate ###
