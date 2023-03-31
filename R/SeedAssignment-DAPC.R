@@ -56,7 +56,7 @@ points(dapc2$grp.coord[,1], dapc2$grp.coord[,2], pch=c(1,22),
 ### seed data ###
 
 AdultSeed <- substr(rownames(out2),7,7)
-seed <- geno[AdultSeed=="S",]
+seed <- out2[AdultSeed=="S",]
 
 ############# ENV DATA ##############
 inds2 <- rownames(seed)

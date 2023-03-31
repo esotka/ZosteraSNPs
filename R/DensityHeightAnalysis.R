@@ -39,10 +39,10 @@ print(aggregate(dat$total.density,by=list(dat$site.nice,dat$depth),mean))
 
 
 f1 <- ggplot(dat, aes(x=site.nice, y=total.density, fill=depth)) +
-  geom_boxplot(outlier.size = NULL) +
+  geom_boxplot() + 
   ylab("Plants / 0.0625 m2") + xlab("") +
   theme_classic(base_size=20) + theme(legend.position=c(0.2,0.9)) +
-  scale_fill_grey(start=.5,end=1,name="")
+  scale_fill_grey(start=.75,end=1,name="")
 print(f1)
 
 #######################################################
@@ -57,7 +57,7 @@ htmodel <- lmer(biomass ~ site * depth + (1|perm.quadrat), data = dat, REML = FA
 print(Anova(htmodel))
 
 f2 <- ggplot(dat[complete.cases(dat$biomass),], aes(x=site.nice, y=biomass, fill=depth)) +
-  geom_boxplot(outlier.size = NULL) +
+  geom_boxplot() + 
   ylab("Aboveground drymass (g) / 0.0625 m2") + xlab("") +
   theme_classic(base_size=20) + theme(legend.position="none") +  
   scale_fill_grey(start=.75,end=1)
@@ -78,7 +78,7 @@ Fit.model1<-fitted(m1)
 plot(x=Fit.model1, y=E.model1, xlab="fitted values", ylab="vegq_residuals")
 
 f3 <- ggplot(dat, aes(x=site.nice, y=f.density, fill=depth)) +
-  geom_boxplot(outlier.size = NULL) +
+  geom_boxplot() + 
   ylab("Flowering plants / 0.0625 m2") + xlab("") +
   theme_classic(base_size=20) + theme(legend.position="none") +  
   scale_fill_grey(start=.75,end=1)
@@ -90,7 +90,7 @@ m1 <- glm(perc.flowering~depth*site,dat,family=poisson)
 Anova(m1)
 
 fx <- ggplot(dat, aes(x=site.nice, y=perc.flowering, fill=depth)) +
-  geom_boxplot(outlier.size = NULL) +
+  geom_boxplot() + 
   ylab("Proportion of flowering plants") + xlab("") +
   theme_classic(base_size=20) + theme(legend.position="none") +  
   scale_fill_grey(start=.75,end=1)
@@ -134,7 +134,7 @@ for (i in 1:4)
 
 
 f4 <- ggplot(out, aes(x=Site, y=Height, fill=Depth)) +
-  geom_boxplot(outlier.size = NULL) +
+  geom_boxplot() + 
   ylab("Plant height (cm)") + xlab("") +
   theme_classic(base_size=20) + theme(legend.position="none") +  
   scale_fill_grey(start=.75,end=1)

@@ -1,6 +1,7 @@
 # site maps with NGSadmix 
 rm(list=ls())
-library(sf) # geographic distance distm(); destPoint()
+library(sf) # geographic distance distm(); st_read
+library(geosphere) #destPoint()
 library(plotrix) # floating.pie
 meta <- as.data.frame(matrix(data=c("cur.s", -70.91575, 42.42009,
                                     "lyn.s", -70.85797, 42.54488,

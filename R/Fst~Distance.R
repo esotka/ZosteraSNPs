@@ -1,6 +1,7 @@
 ### Fst with distance - no Clone adults
 rm(list=ls())
 library(geosphere) # geographic distance distm()
+library(scales) # alpha
 
 # phist (from amova_noClones.R)
 dat <- read.csv("output/amova.method1-calls_noClones-pairwisePhiSt.csv")
@@ -30,15 +31,127 @@ h1 <- unlist(lapply(strsplit(dat$pop1,"_"),"[[",2))
 h2 <- unlist(lapply(strsplit(dat$pop2,"_"),"[[",2))
 dat$hab <- factor(paste(h1,h2,sep=""))
 
-cols <- c("red","black","black","blue")
+cols <- c("red","black","blue")
 pdf("output/Fst~Distance.pdf",width=7,height=5)
-plot(dat$km,dat$phiST,xlab="Geographic distance (km)",ylab="phiSt",pch=19,col=cols[dat$hab])
-abline(lm(dat$phiST~(dat$km)))
-arrows(1,.107,.5,.085)
-text(x=0,y=0.11,pos=4,"Between habitat")
+y = dat$phiST/(1-dat$phiST); x = dat$km
+plot(dat$km,y,xlab="Geographic distance (km)",
+     ylab="Genetic Distance (Fst/(1-Fst))",pch=19,col=cols[dat$hab],ylim=c(0,.2))
+m = lm(y~x)
+#abline(m)
+lines(x[order(x)], predict(m, interval = "confidence")[, "fit"][order(x)])
+lines(x[order(x)], predict(m, interval = "confidence")[, "lwr"][order(x)])
+lines(x[order(x)], predict(m, interval = "confidence")[, "upr"][order(x)])
+polygon(x = c(x[order(x)],x[order(x,decreasing = T)]),
+        y=c(predict(m, interval = "confidence")[, "lwr"][order(x)],predict(m, interval = "confidence")[, "upr"][order(x,decreasing = T)]),
+        col=alpha("lightgrey",0.5),border=alpha("lightgrey",0.5))
+m_all = m
+
+par()
+y = dat$phiST/(1-dat$phiST); x = dat$km
+plot(dat$km,y,xlab="Geographic distance (km)",
+     ylab="Genetic Distance (Fst/(1-Fst))",pch=19,col=cols[dat$hab],ylim=c(0,.2))
+m = lm(y~x)
+#abline(m)
+lines(x[order(x)], predict(m, interval = "confidence")[, "fit"][order(x)])
+lines(x[order(x)], predict(m, interval = "confidence")[, "lwr"][order(x)])
+lines(x[order(x)], predict(m, interval = "confidence")[, "upr"][order(x)])
+polygon(x = c(x[order(x)],x[order(x,decreasing = T)]),
+        y=c(predict(m, interval = "confidence")[, "lwr"][order(x)],predict(m, interval = "confidence")[, "upr"][order(x,decreasing = T)]),
+        col=alpha("lightgrey",0.5),border=alpha("lightgrey",0.5))
+m_all = m
+
+
+## shallow only (SS: blue)
+ss = dat[dat$hab=="SS",]
+y = ss$phiST/(1-ss$phiST); x = ss$km
+m = lm(y~x)
+lines(x[order(x)], predict(m, interval = "confidence")[, "fit"][order(x)],col="blue")
+lines(x[order(x)], predict(m, interval = "confidence")[, "lwr"][order(x)],col="blue")
+lines(x[order(x)], predict(m, interval = "confidence")[, "upr"][order(x)],col="blue")
+polygon(x = c(x[order(x)],x[order(x,decreasing = T)]),
+        y=c(predict(m, interval = "confidence")[, "lwr"][order(x)],predict(m, interval = "confidence")[, "upr"][order(x,decreasing = T)]),
+        col=alpha("blue",0.1),border=alpha("blue",0.1))
+m_ss = m
+
+## deep only (DD; red)
+dd = dat[dat$hab=="DD",]
+y = dd$phiST/(1-dd$phiST); x = dd$km
+m = lm(y~x)
+lines(x[order(x)], predict(m, interval = "confidence")[, "fit"][order(x)],col="red")
+lines(x[order(x)], predict(m, interval = "confidence")[, "lwr"][order(x)],col="red")
+lines(x[order(x)], predict(m, interval = "confidence")[, "upr"][order(x)],col="red")
+polygon(x = c(x[order(x)],x[order(x,decreasing = T)]),
+        y=c(predict(m, interval = "confidence")[, "lwr"][order(x)],predict(m, interval = "confidence")[, "upr"][order(x,decreasing = T)]),
+        col=alpha("red",0.1),border=alpha("red",0.1))
+m_dd = m
+
+#### deep-deep and shallow-shallow only (remove deep-vs-shallow)
+par()
+y = dat$phiST/(1-dat$phiST); x = dat$km
+plot(dat$km,y,xlab="Geographic distance (km)",
+     ylab="Genetic Distance (Fst/(1-Fst))",pch=19,col=cols[dat$hab],ylim=c(0,.2))
+m = lm(y~x)
+#abline(m)
+lines(x[order(x)], predict(m, interval = "confidence")[, "fit"][order(x)])
+lines(x[order(x)], predict(m, interval = "confidence")[, "lwr"][order(x)])
+lines(x[order(x)], predict(m, interval = "confidence")[, "upr"][order(x)])
+polygon(x = c(x[order(x)],x[order(x,decreasing = T)]),
+        y=c(predict(m, interval = "confidence")[, "lwr"][order(x)],predict(m, interval = "confidence")[, "upr"][order(x,decreasing = T)]),
+        col=alpha("lightgrey",0.5),border=alpha("lightgrey",0.5))
+
+ddss = dat[dat$hab%in%c("DD","SS"),]
+y = ddss$phiST/(1-ddss$phiST); x = ddss$km
+m = lm(y~x)
+lines(x[order(x)], predict(m, interval = "confidence")[, "fit"][order(x)],col="brown")
+
+lines(x[order(x)], predict(m, interval = "confidence")[, "lwr"][order(x)],col="brown")
+lines(x[order(x)], predict(m, interval = "confidence")[, "upr"][order(x)],col="brown")
+polygon(x = c(x[order(x)],x[order(x,decreasing = T)]),
+        y=c(predict(m, interval = "confidence")[, "lwr"][order(x)],predict(m, interval = "confidence")[, "upr"][order(x,decreasing = T)]),
+        col=alpha("brown",0.1),border=alpha("brown",0.1))
+m_ddss = m
+
+
+
 dev.off()
 
-cor.test(dat$phiST,dat$km,method="kendall")
+print(summary(m_all))
+#Estimate Std. Error t value Pr(>|t|)    
+#(Intercept) 0.065455   0.009760   6.706 4.08e-07 ***
+#x           0.003151   0.000596   5.286 1.58e-05 ***
+## Slope CI = mean ± 2*SE 
+## > 0.003151 + 2*0.000596
+#[1] 0.004343
+#> 0.003151 - 2*0.000596
+#[1] 0.001959
+# Intercept
+#> 0.065455 + 2*0.009760
+#[1] 0.084975
+#> 0.065455 - 2*0.009760
+#[1] 0.045935
+print(summary(m_ss))
+#Estimate Std. Error t value Pr(>|t|)  
+#(Intercept) 0.039746   0.021534   1.846   0.1387  
+#x           0.003934   0.001217   3.233   0.0319 *
+print(summary(m_dd))
+#            Estimate Std. Error t value Pr(>|t|)  
+#(Intercept) 0.093095   0.027376   3.401   0.0273 *
+#  x           0.002254   0.001548   1.456   0.2192  
+print(summary(m_ddss))
+#Estimate Std. Error t value Pr(>|t|)   
+#(Intercept) 0.066503   0.019149   3.473  0.00599 **
+#  x           0.003089   0.001083   2.854  0.01714 
+
+y = dat$phiST/(1-dat$phiST); x = dat$km
+print(cor.test(y,x,method="spearman"))
+y = ss$phiST/(1-ss$phiST); x = ss$km
+print(cor.test(y,x,method="spearman"))
+y = dd$phiST/(1-dd$phiST); x = dd$km
+print(cor.test(y,x,method="spearman"))
+y = ddss$phiST/(1-ddss$phiST); x = ddss$km
+print(cor.test(y,x,method="spearman"))
+
+
 
 dat$hab[dat$hab=="SD"] <- "DS"
 dat$hab <- factor(dat$hab)
