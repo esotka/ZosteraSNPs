@@ -77,7 +77,7 @@ for(i in 1:4)
   tmp <- out2[rownames(out2)%in%ind,] # rows = pop; cols=loci
   depth <- substr(rownames(tmp),2,2); depth <- factor(depth)
   pc.cr <- prcomp(tmp)
-  col.sub <- c("red","black")[depth]
+  col.sub <- c("black","red")[depth]
   #print(depth)
   par(mar=c(3,3,4,2))
   plot(pc.cr$x[,1],pc.cr$x[,2],cex=0,xaxt="none",yaxt="none",ylab="",xlab="")
@@ -88,7 +88,7 @@ for(i in 1:4)
     xbar.y <- mean(pc.cr$x[depth==levels(depth)[j],2])
     tmp.pc.cr <- pc.cr$x[depth==levels(depth)[j],]
     segments(x0 = xbar.x,y0 = xbar.y,x1 = tmp.pc.cr[,1],y1 = tmp.pc.cr[,2],
-             col=c("red","black")[j],lwd=.5)
+             col=c("black","red")[j],lwd=.5)
   }
   
   # ADMIX

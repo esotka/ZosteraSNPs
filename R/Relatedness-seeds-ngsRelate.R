@@ -21,7 +21,9 @@ rab$gridA <- substr(rab$a,3,3)
 rab$gridB <- substr(rab$b,3,3)
 rab$gridAB <- paste(rab$gridA,rab$gridB)
 rab$site <- substr(rab$a,1,1)
-rab$site[rab$site=="D"] <- "C"
+rab$site[rab$site=="D"] = "Curlew"
+rab$site[rab$site=="N"] = "Niles"
+rab$site[rab$site=="W"] = "West"
 rab$site <- factor(rab$site); rab$site <- factor(rab$site,levels=levels(rab$site)[c(1,3,2)])
 rab$WithinBetweenGrid <- ifelse(rab$gridAB%in%c("1 1","2 2","3 3"),"withinGrid","betweenGrid")  
   
@@ -90,22 +92,23 @@ rab$WithinBetweenCore <- ifelse(rab$grid_coreAB%in%tmp,"withinCore","betweenCore
 
 rab$GridCoreCombo <- paste(rab$WithinBetweenGrid,rab$WithinBetweenCore)
 
-rab$GridCoreCombo[rab$GridCoreCombo=="betweenGrid betweenCore"] <- "betweenGrid"
-rab$GridCoreCombo[rab$GridCoreCombo=="withinGrid betweenCore"] <- "betweenCore"
-rab$GridCoreCombo[rab$GridCoreCombo=="withinGrid withinCore"] <- "withinCore"
+rab$GridCoreCombo[rab$GridCoreCombo=="betweenGrid betweenCore"] <- "between grids"
+rab$GridCoreCombo[rab$GridCoreCombo=="withinGrid betweenCore"] <- "between cores"
+rab$GridCoreCombo[rab$GridCoreCombo=="withinGrid withinCore"] <- "within cores"
 rab$GridCoreCombo <- factor(rab$GridCoreCombo)
-rab$GridCoreCombo <- factor(rab$GridCoreCombo,levels=levels(rab$GridCoreCombo)[c(2,1,3)])
+rab$GridCoreCombo <- factor(rab$GridCoreCombo,levels=levels(rab$GridCoreCombo)[c(3,1,2)])
 
 print(table(rab$grid_coreAB,rab$site))
 #print(bwplot(rab~grid_coreAB | site,data=rab,col="grey"))
 print(bwplot(rab~GridCoreCombo| site,data=rab,col="grey"))
 pdf("output/Relatedness~Core-ngsRelate_seeds.pdf")
 f <- ggplot(rab, aes(x=site, y=rab, fill=GridCoreCombo)) +
-  geom_boxplot(outlier.size = NULL) +
+  geom_boxplot(outlier.shape = NA) +
   ylab("rab") + xlab("") +
   theme_classic(base_size=20) + theme(legend.position=c(0.8,0.8),legend.title=element_blank()) +
   scale_fill_grey(start=.75,end=1)
 print(f)
+dev.off()
 mod <- glm(rab~GridCoreCombo*site,data=rab,family="poisson")
 #Df Deviance Resid. Df Resid. Dev
 #NULL                                1674     174.91
@@ -122,10 +125,10 @@ print(anova(mod))
 #GridCoreCombo:site    0.334
 
 f <- ggplot(rab[rab$GridCoreCombo%in%c("withinCore","betweenCore"),], aes(x=site, y=rab, fill=GridCoreCombo)) +
-  geom_boxplot(outlier.size = NULL) +
-  ylab("rab") + xlab("") +
-  theme_classic(base_size=20) + theme(legend.position=c(0.8,0.8),legend.title=element_blank()) +
-  scale_fill_grey(start=.75,end=1)
+  #geom_boxplot(outlier.size = NULL) +
+  #ylab("rab") + xlab("") +
+  #theme_classic(base_size=20) + theme(legend.position=c(0.8,0.8),legend.title=element_blank()) +
+  #scale_fill_grey(start=.75,end=1)
 print(f)
 dev.off()
 print(bwplot(rab~GridCoreCombo| site,data=rab[rab$GridCoreCombo%in%c("withinCore","betweenCore"),],col="grey"))

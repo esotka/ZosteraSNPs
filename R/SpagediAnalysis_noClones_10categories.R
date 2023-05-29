@@ -42,12 +42,23 @@ for (i in 3:12)
 p <- matrix(p,nrow=ncat,ncol=8,byrow=T)
 p <- ifelse(p<=0.05,"*","")
 
+# pretty names
+pretty_names = c("Curlew Deep",#cur_d" 
+                 "Curlew Shallow",#,cur_s" 
+                 "Lynch Deep",#lyn_d" 
+                 "Lynch Shallow",#lyn_s" 
+                 "West Deep",#wes_d"
+                 "West Shallow",#wes_s" 
+                 "Niles Deep",#"nil_d" 
+                 "Niles Shallow")#nil_s"
+
+
 pdf("output/SpagediSGS_noClones_10categories.pdf",width=10,height=4)
 par(mfcol=c(2,4),mai=c(0.3,0.3,0.1,0.1))
 for(n in 1:8)
 {
   plot(x=mean.dist[,n],y=xbar[,n],type="b",ylim=c(-.1,.2),xlim=c(0,45),ylab="kinship",xlab="meters",pch=20,cex=1.2)
-  mtext(site.depth[n],line=-2)
+  mtext(pretty_names[n],line=-2)
   segments(-1,0,50,0,lty="dashed")
   points(x=mean.dist[,n],y=CI_inf[,n],col="red",lty="dashed",type="l")
   points(x=mean.dist[,n],y=CI_sup[,n],col="red",lty="dashed",type="l")

@@ -31,11 +31,11 @@ h1 <- unlist(lapply(strsplit(dat$pop1,"_"),"[[",2))
 h2 <- unlist(lapply(strsplit(dat$pop2,"_"),"[[",2))
 dat$hab <- factor(paste(h1,h2,sep=""))
 
-cols <- c("red","black","blue")
-pdf("output/Fst~Distance.pdf",width=7,height=5)
-y = dat$phiST/(1-dat$phiST); x = dat$km
+cols <- c("red","black","pink")
+pdf("output/Fst~Distance.pdf",width=4,height=5)
+y = dat$phiST; x = dat$km
 plot(dat$km,y,xlab="Geographic distance (km)",
-     ylab="Genetic Distance (Fst/(1-Fst))",pch=19,col=cols[dat$hab],ylim=c(0,.2))
+     ylab="PHIst/(1-PHIst)",pch=19,col=cols[dat$hab],ylim=c(0,.2))
 m = lm(y~x)
 #abline(m)
 lines(x[order(x)], predict(m, interval = "confidence")[, "fit"][order(x)])
@@ -49,7 +49,7 @@ m_all = m
 par()
 y = dat$phiST/(1-dat$phiST); x = dat$km
 plot(dat$km,y,xlab="Geographic distance (km)",
-     ylab="Genetic Distance (Fst/(1-Fst))",pch=19,col=cols[dat$hab],ylim=c(0,.2))
+     ylab="PHIst/(1-PHIst)",pch=19,col=cols[dat$hab],ylim=c(0,.2))
 m = lm(y~x)
 #abline(m)
 lines(x[order(x)], predict(m, interval = "confidence")[, "fit"][order(x)])
@@ -58,12 +58,12 @@ lines(x[order(x)], predict(m, interval = "confidence")[, "upr"][order(x)])
 polygon(x = c(x[order(x)],x[order(x,decreasing = T)]),
         y=c(predict(m, interval = "confidence")[, "lwr"][order(x)],predict(m, interval = "confidence")[, "upr"][order(x,decreasing = T)]),
         col=alpha("lightgrey",0.5),border=alpha("lightgrey",0.5))
-m_all = m
+m_all_std = m
 
 
 ## shallow only (SS: blue)
 ss = dat[dat$hab=="SS",]
-y = ss$phiST/(1-ss$phiST); x = ss$km
+y = ss$phiST; x = ss$km
 m = lm(y~x)
 lines(x[order(x)], predict(m, interval = "confidence")[, "fit"][order(x)],col="blue")
 lines(x[order(x)], predict(m, interval = "confidence")[, "lwr"][order(x)],col="blue")
@@ -75,7 +75,7 @@ m_ss = m
 
 ## deep only (DD; red)
 dd = dat[dat$hab=="DD",]
-y = dd$phiST/(1-dd$phiST); x = dd$km
+y = dd$phiST; x = dd$km
 m = lm(y~x)
 lines(x[order(x)], predict(m, interval = "confidence")[, "fit"][order(x)],col="red")
 lines(x[order(x)], predict(m, interval = "confidence")[, "lwr"][order(x)],col="red")
@@ -87,9 +87,10 @@ m_dd = m
 
 #### deep-deep and shallow-shallow only (remove deep-vs-shallow)
 par()
-y = dat$phiST/(1-dat$phiST); x = dat$km
+y = dat$phiST; x = dat$km
 plot(dat$km,y,xlab="Geographic distance (km)",
-     ylab="Genetic Distance (Fst/(1-Fst))",pch=19,col=cols[dat$hab],ylim=c(0,.2))
+     ylab=expression(paste(Phi," / (1 -",Phi,")")),pch=19,
+     col=cols[dat$hab],ylim=c(0,.2))
 m = lm(y~x)
 #abline(m)
 lines(x[order(x)], predict(m, interval = "confidence")[, "fit"][order(x)])
@@ -100,7 +101,7 @@ polygon(x = c(x[order(x)],x[order(x,decreasing = T)]),
         col=alpha("lightgrey",0.5),border=alpha("lightgrey",0.5))
 
 ddss = dat[dat$hab%in%c("DD","SS"),]
-y = ddss$phiST/(1-ddss$phiST); x = ddss$km
+y = ddss$phiST; x = ddss$km
 m = lm(y~x)
 lines(x[order(x)], predict(m, interval = "confidence")[, "fit"][order(x)],col="brown")
 
@@ -116,61 +117,49 @@ m_ddss = m
 dev.off()
 
 print(summary(m_all))
+# y = fst
 #Estimate Std. Error t value Pr(>|t|)    
+#(Intercept) 0.0614417  0.0079542   7.724 3.39e-08 ***
+#  x           0.0025876  0.0004857   5.327 1.42e-05 ***
+print(summary(m_all_std))
+# y = fst/(1-fst)
+#Estimate Std. Error t value Pr(>|t|)   
 #(Intercept) 0.065455   0.009760   6.706 4.08e-07 ***
 #x           0.003151   0.000596   5.286 1.58e-05 ***
-## Slope CI = mean ± 2*SE 
-## > 0.003151 + 2*0.000596
-#[1] 0.004343
-#> 0.003151 - 2*0.000596
-#[1] 0.001959
-# Intercept
-#> 0.065455 + 2*0.009760
-#[1] 0.084975
-#> 0.065455 - 2*0.009760
-#[1] 0.045935
-print(summary(m_ss))
-#Estimate Std. Error t value Pr(>|t|)  
-#(Intercept) 0.039746   0.021534   1.846   0.1387  
-#x           0.003934   0.001217   3.233   0.0319 *
-print(summary(m_dd))
-#            Estimate Std. Error t value Pr(>|t|)  
-#(Intercept) 0.093095   0.027376   3.401   0.0273 *
-#  x           0.002254   0.001548   1.456   0.2192  
 print(summary(m_ddss))
+# y = fst/(1-fst)
 #Estimate Std. Error t value Pr(>|t|)   
 #(Intercept) 0.066503   0.019149   3.473  0.00599 **
 #  x           0.003089   0.001083   2.854  0.01714 
+# y = fst
+#Estimate Std. Error t value Pr(>|t|)   
+#(Intercept) 0.062839   0.015477   4.060  0.00229 **
+#  x           0.002514   0.000875   2.873  0.01657 * 
 
-y = dat$phiST/(1-dat$phiST); x = dat$km
-print(cor.test(y,x,method="spearman"))
-y = ss$phiST/(1-ss$phiST); x = ss$km
-print(cor.test(y,x,method="spearman"))
-y = dd$phiST/(1-dd$phiST); x = dd$km
-print(cor.test(y,x,method="spearman"))
-y = ddss$phiST/(1-ddss$phiST); x = ddss$km
-print(cor.test(y,x,method="spearman"))
+#######################
+##### mantel test #####
+#######################
+library(ade4)
+# all pops
+write.csv(dat,"output/Fst~Distance.csv",quote=F,row.names=F)
+## convert to matrix manually # this one is for a supplemental table
+out = read.table("output/Fst~Distance_matrix.txt",header=T,sep="\t")
+rownames(out) = out[,1]
+out = out[,-1]
 
+km_mat = as.dist(t(out)) # upper triangle
+fst_mat = as.dist(out) # lower triangle
+print(mantel.rtest(fst_mat,km_mat,10000))
+#Monte-Carlo test = all pops
+#Call: mantelnoneuclid(m1 = m1, m2 = m2, nrepet = nrepet)
 
+#Observation: 0.7224087 
 
-dat$hab[dat$hab=="SD"] <- "DS"
-dat$hab <- factor(dat$hab)
-anova(lm(phiST~hab,dat)) # no significant difference between DD, DS, SS
+#Based on 10000 replicates
+#Simulated p-value: 0.00179982 
+#Alternative hypothesis: greater 
 
-#Analysis of Variance Table
+#Std.Obs Expectation    Variance 
+#3.388240375 0.002022914 0.045204514
 
-#Response: phiST
-#Df    Sum Sq    Mean Sq F value Pr(>F)
-#hab        2 0.0021507 0.0010753  1.0599 0.3616
-#Residuals 25 0.0253647 0.0010146
-anova(lm(phiST~hab,dat[!dat$hab=="DS",])) # no significant difference between DD or SS
-
-#Analysis of Variance Table
-
-#Response: phiST
-#Df    Sum Sq    Mean Sq F value Pr(>F)
-#hab        1 0.0013659 0.00136589  1.8154 0.2076
-#Residuals 10 0.0075239 0.00075239              
-
-## we don't have much power to detect differences in the slope of these (low sample size)
 
