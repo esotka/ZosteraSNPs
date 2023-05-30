@@ -47,9 +47,13 @@ rab$site <- substr(rab$a,1,3)
 rab$depth <- substr(rab$a,5,5)
 rab$site_depth <- paste(rab$site,rab$depth,sep="_")
 library(lattice)
-print(histogram(~rab,data=rab,col="grey",breaks=40))
-print(histogram(~rab,data=rab,col="grey",breaks=40,ylim=c(0,5)))
-
+pdf("output/histogram_ngsRelate.pdf")
+par(mfrow=c(2,1),mar=c(4,4,1,1))
+hist(rab$rab,col="grey",breaks=40,xlab="rab",main = "",ylim=c(0,2500),xlim=c(0,1))
+segments(.8,0,0.8,500,"red")
+hist(rab$rab,col="grey",breaks=40,xlab="rab",ylim=c(0,500),main = "",xlim=c(0,1))
+segments(.8,0,0.8,100,"red")
+dev.off()
 # Where are the clones? 
 # here are geographic positions
 latlon <- read.csv("output/IndivLatLon.csv")
