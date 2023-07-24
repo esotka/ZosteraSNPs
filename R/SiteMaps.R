@@ -212,6 +212,34 @@ write.csv(all.dist2,"output/GeographicDistanceIndiv.csv",quote=F)
 #[3,] 29.04944 17.520769  0.00000 12.949062
 #[4,] 17.94579  4.572644 12.94906  0.000000
 
+# Max distance at each site x depth combination
+s.by.d = substr(rownames(all.dist2),1,5)
+for (i in 1:8)
+{
+  tmp = all.dist2[s.by.d == unique(s.by.d)[i],s.by.d == unique(s.by.d)[i]]
+  print(unique(s.by.d)[i])
+  print(range(tmp))
+}
+
+#[1] "cur.d"
+#[1]  0.0000 44.7145
+#[1] "cur.s"
+#[1]  0.00000 44.18858
+#[1] "nil.d"
+#[1]  0.00000 44.18858
+#[1] "nil.s"
+#[1]  0.00000 35.25436
+#[1] "wes.d"
+#[1]  0.000 44.375
+#[1] "wes.s"
+#[1]  0.000 44.375
+#[1] "lyn.d"
+#[1]  0.00000 44.94168
+#[1] "lyn.s"
+#[1]  0.00000 44.94168
+
+
+
 ################################################
 ### make a pretty map with a coastline ###
 ################################################

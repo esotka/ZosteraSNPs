@@ -139,7 +139,7 @@ print(summary(m_ddss))
 #######################
 ##### mantel test #####
 #######################
-library(ade4)
+library(mantel)
 # all pops
 write.csv(dat,"output/Fst~Distance.csv",quote=F,row.names=F)
 ## convert to matrix manually # this one is for a supplemental table
@@ -149,17 +149,25 @@ out = out[,-1]
 
 km_mat = as.dist(t(out)) # upper triangle
 fst_mat = as.dist(out) # lower triangle
-print(mantel.rtest(fst_mat,km_mat,10000))
-#Monte-Carlo test = all pops
-#Call: mantelnoneuclid(m1 = m1, m2 = m2, nrepet = nrepet)
+print(mantel(fst_mat,km_mat,permutations=10000))
+#Mantel statistic based on Pearson's product-moment correlation 
 
-#Observation: 0.7224087 
+#Call:
+#mantel(xdis = fst_mat, ydis = km_mat, permutations = 10000) 
 
-#Based on 10000 replicates
-#Simulated p-value: 0.00179982 
-#Alternative hypothesis: greater 
+#Mantel statistic r: 0.7224 
+#      Significance: 0.0012999 
 
-#Std.Obs Expectation    Variance 
-#3.388240375 0.002022914 0.045204514
+#Upper quantiles of permutations (null model):
+#  90%   95% 97.5%   99% 
+#0.261 0.375 0.484 0.597 
+#Permutation: free
+#Number of permutations: 10000
 
-
+# partial mantel test. Coded habitat at 1 or 0 (different or same habitats)
+env = read.table("output/DeepVsShallow_distanceMatrix.txt",header=T,sep="\t")
+rownames(env) = env[,1]
+env = env[,-1]
+env_mat = as.dist(env) # lower triangle
+mantel.partial(fst_mat,km_mat,env_mat,permutations = 10000)
+mantel.partial(fst_mat,env_mat,km_mat,permutations = 10000)

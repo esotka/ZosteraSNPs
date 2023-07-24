@@ -1,9 +1,9 @@
-Curlew_D	Curlew_S	Lynch_S	Niles_D	Niles_S	West_D	West_S
+Curlew_D	Curlew_S	Lynch_S	West_D	West_S	Niles_D	Niles_S
 Curlew_D	3	2	0	0	0	0	0
 Curlew_S	0	24	0	0	0	0	0
-Lynch_D	0	0	0	0	0	0	13
-Lynch_S	0	0	3	0	0	0	1
-Niles_D	0	0	0	1	0	0	0
-Niles_S	0	0	0	0	10	0	0
-West_D	0	0	0	0	0	1	0
-West_S	0	9	0	0	0	0	32
+Lynch_D	0	0	0	0	13	0	0
+Lynch_S	0	0	3	0	1	0	0
+West_D	0	0	0	1	0	0	0
+West_S	0	9	0	0	32	0	0
+Niles_D	0	0	0	0	0	1	0
+Niles_S	0	0	0	0	0	0	10

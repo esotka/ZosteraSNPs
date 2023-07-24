@@ -41,6 +41,7 @@ env$site.nice[env$site.nice=="W"] <- "West"
 env$site.nice[env$site.nice=="L"] <- "Lynch"
 env$site.nice <- factor(env$site.nice)
 env$site.nice.depth <- factor(paste(env$site.nice,env$SvD,sep="_"))
+env$site.nice.depth = factor(env$site.nice.depth,levels=levels(env$site.nice.depth)[c(1:4,7:8,5:6)])
 
 
 dapc2 <- dapc(adult,grp=env$site.nice.depth,n.pca=20,n.da=100)
@@ -72,6 +73,7 @@ env$site.nice[env$site.nice=="W"] <- "West"
 env$site.nice[env$site.nice=="L"] <- "Lynch"
 env$site.nice <- factor(env$site.nice)
 env$site.nice.depth <- factor(paste(env$site.nice,env$SvD,sep="_"))
+env$site.nice.depth = factor(env$site.nice.depth,levels=levels(env$site.nice.depth)[c(1:3,6:7,4:5)])
 
 seedPredict <- predict(dapc2,seed)
 ### no Lynch deep

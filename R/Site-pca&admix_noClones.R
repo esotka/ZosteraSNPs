@@ -100,7 +100,8 @@ dat <- dat[,order(colorder[[i]])]
 par(mar=c(2,2,2,2))
 fig <- barplot(t(dat),col=kcol[1:length(colorder[[i]])],space=0,border=NA,xlab="",ylab="Proportion",cex.lab=1.2,names.arg = rep("",nrow(dat)),horiz=F,ylim=c(-.1,1.1))
 ## annotations
-mtext(site[i],at=-15,cex=1.5)
+titles = paste(c("A.","B.","C.","D."),site)
+mtext(titles[i],at=-15,cex=1.5)
 x <- 1:dim(dat)[1]
 x1 <- x[depth==levels(depth)[1]]
 x2 <- x[depth==levels(depth)[2]]
