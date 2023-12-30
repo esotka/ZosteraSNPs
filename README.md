@@ -12,13 +12,39 @@ Updated Dec 30 2023
 ***output/SiteMaps_coastline.pdf***  
 ***output/SiteMaps.pdf***  
 
-### plant traits 
+### Adult plant traits 
 ***R/DensityHeightAnalysis.R***  
 ***data/perm.quad.density.2019.csv***  
 ***data/perm.quad.veg.ht.2019.csv***  
 ***output/DensityHeight.png***  
 
+### Genotype likelihoods and calls are in data/SNPs/###
+
+### Analysis of clonality via ngsRelate
+***data/ngsRelateFiles/***  The output from ngsRelate  
+***R/ngsRelate_processFiles_rab.R***  
+***output/histogram_ngsRelate_rab.pdf***  
+***output/clones_r=70perc.txt***  
+***output/clones_r=80perc.txt***  
+
+### Analysis of clonality via dissimilarity  
+***data/DissimilarityDist_clones_95perc.csv.gz***  
+***R/dissimilarity.R***  
+***output/histogram_dissimilarity.pdf***  
+
+### finalize list of clones and make map ###  
+***R/IdentifyClones_summary.R***  
+***output/ListOfClones.txt***  
+***output/Clone_analysis.csv***  
+***data/214adults99seeds_noClones_clean***  The output of unique genets to use  
+***R/ngsRelate_ClonesOnMap.R***  
+***output/output/ClonesOnMap_Both.pdf***  
+
 ### ~~~~~  TO DO ~~~~~~~~    
+
+### Seed plant traits  
+***Frequency of seeds in cores***  
+***size of seeds***
 
 ### map of sites and admix results
 ***R/SiteMaps_NGSadmix.R***  
@@ -36,15 +62,6 @@ Updated Dec 30 2023
 ***data/genotypeCalls.393ind.8684loci.geno***This is the output dataset  
 ***data/ind393_clean***  
 ***data/loci8684***    
-
-### Analysis of clonal adults and relatedness (as determined by ngsRelate)
-***R/ngsRelate_ClonesOnMap.R***  
-***R/Relatedness~Distance-ngsRelate.R***  
-***data/ngsRelate/FILES***  The output from ngsRelate  
-***data/ind245adults_noClones_clean***  The output of unique genets to use  
-***ListOfClones.txt***  
-***ngsRelate_ClonesOnMap=threshold=0.8.pdf***  
-***output/Relatedness~Distance-ngsRelate-final.pdf***  
 
 ### SPAGHEDI correlogram of adults
 ***R/CreateSpaghediFiles.R***  
