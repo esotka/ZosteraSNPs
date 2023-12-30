@@ -1,0 +1,221 @@
+IQ-TREE multicore version 1.6.11 for Linux 64-bit built Jun  6 2019
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    92355f672ec4 (AVX2, FMA3, 125 GB RAM)
+Command: /usr/local/iqtree/bin/iqtree -s /tmp/IQTREE/Feq5kXEvUf/seqin.fst -st DNA -pre /tmp/IQTREE/Feq5kXEvUf/iqt -m GTR+FO -bb 1000 -pers 0.5 -numstop 100
+Seed:    97774 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Thu Jun 23 09:05:03 2022
+Kernel:  AVX+FMA - 1 threads (24 CPU cores detected)
+
+HINT: Use -nt option to specify number of threads because your CPU has 24 cores!
+HINT: -nt AUTO will automatically determine the best number of threads to use.
+
+Reading alignment file /tmp/IQTREE/Feq5kXEvUf/seqin.fst ... Fasta format detected
+Alignment most likely contains protein sequences
+WARNING: Your specified sequence type is different from the detected one
+Alignment has 95 sequences with 8683 columns, 8135 distinct patterns
+2345 parsimony-informative, 1259 singleton sites, 5079 constant sites
+         Gap/Ambiguity  Composition  p-value
+   1  DD1_02S   16.35%    passed     89.43%
+   2  DD3_01S   18.24%    passed     53.51%
+   3  DD3_02S   17.56%    passed     71.14%
+   4  DS1_01S   14.88%    passed     99.06%
+   5  DS1_02S   19.52%    passed     60.54%
+   6  DS2_01S   18.98%    passed     86.55%
+   7  DS2_02S   18.75%    passed     65.35%
+   8  DS2_03S   18.18%    passed     58.45%
+   9  DS2_05S   13.18%    passed     93.14%
+  10  DS2_06S   20.56%    passed     20.24%
+  11  DS2_07S   17.08%    passed     80.41%
+  12  DS2_08S   13.42%    passed     45.04%
+  13  DS2_10S   21.23%    passed     71.74%
+  14  DS3_03S   25.08%    passed      8.03%
+  15  DS3_27S   18.14%    passed     27.54%
+  16  DS3_28S   17.98%    passed     28.24%
+  17  DS3_29S   20.35%    passed     78.38%
+  18  DS3_30S   19.07%    passed     62.61%
+  19  DS3_31S   18.90%    passed     47.03%
+  20  DS3_32S   16.58%    passed     43.76%
+  21  DS3_33S   18.27%    passed     43.48%
+  22  DS3_34S   13.28%    passed     63.89%
+  23  DS3_35S   18.81%    passed     51.41%
+  24  DS3_36S   24.13%    failed      0.20%
+  25  DS3_37S   20.55%    passed     27.71%
+  26  DS3_38S   25.94%    passed     14.28%
+  27  DS3_39S   25.04%    failed      0.04%
+  28  DS3_40S   27.27%    passed      9.00%
+  29  DS3_42S   22.71%    failed      0.80%
+  30  DS3_43S   21.80%    passed     31.40%
+  31  DS3_54S   15.78%    passed     77.41%
+  32  DS3_55S   25.84%    failed      0.01%
+  33  DS3_58S   18.69%    passed     48.99%
+  34  DS3_59S   17.49%    passed     60.71%
+  35  DS3_60S   18.68%    passed     27.00%
+  36  DS3_61S   15.85%    passed     97.72%
+  37  DS3_62S   19.31%    failed      3.05%
+  38  DS3_63S   20.09%    passed     35.62%
+  39  LS1_01S   19.14%    passed     38.37%
+  40  LS1_02S   17.70%    passed     59.79%
+  41  LS3_01S   18.16%    passed     81.85%
+  42  ND3_01S   12.24%    passed     41.56%
+  43  NS1_01S   22.27%    passed     50.16%
+  44  NS1_02S   19.43%    passed     28.57%
+  45  NS2_01S   17.10%    passed     78.34%
+  46  NS2_02S   20.14%    passed     16.38%
+  47  NS2_03S   17.91%    passed     64.52%
+  48  NS2_05S   13.74%    passed     92.31%
+  49  NS2_06S   16.76%    passed     53.80%
+  50  NS2_07S   18.40%    passed     66.87%
+  51  NS2_08S   20.59%    passed     17.81%
+  52  NS3_01S   19.52%    passed     17.37%
+  53  WD1_02S   18.09%    passed     55.75%
+  54  WS1_03S   18.29%    passed     37.48%
+  55  WS1_04S   17.97%    passed     34.93%
+  56  WS1_05S   18.04%    passed     31.56%
+  57  WS1_06S   18.36%    passed     10.54%
+  58  WS1_07S   17.33%    passed     14.67%
+  59  WS1_08S   18.17%    passed     17.40%
+  60  WS1_11S   18.75%    failed      3.71%
+  61  WS1_12S   12.60%    passed     64.48%
+  62  WS1_13S   23.05%    failed      0.12%
+  63  WS1_15S   26.75%    failed      0.00%
+  64  WS1_16S   26.14%    failed      0.00%
+  65  WS1_17S   20.20%    passed     62.97%
+  66  WS1_18S   22.25%    failed      1.99%
+  67  WS2_02S   14.94%    passed     77.05%
+  68  WS2_03S   17.71%    passed     20.37%
+  69  WS2_04S   18.55%    passed      7.34%
+  70  WS2_05S   17.46%    passed     38.03%
+  71  WS2_06S   19.51%    passed     61.50%
+  72  WS2_07S   19.36%    passed     18.95%
+  73  WS2_08S   17.87%    passed     90.15%
+  74  WS2_14S   16.62%    passed     84.03%
+  75  WS2_19S   18.36%    passed      5.28%
+  76  WS2_20S   21.01%    passed     10.00%
+  77  WS2_23S   18.70%    failed      3.22%
+  78  WS2_24S   20.90%    passed     31.94%
+  79  WS2_27S   18.28%    passed      8.86%
+  80  WS2_28S   17.16%    passed     44.29%
+  81  WS2_30S   18.84%    failed      1.46%
+  82  WS3_01S   18.76%    passed     45.39%
+  83  WS3_02S   24.38%    failed      0.11%
+  84  WS3_03S   17.40%    passed     41.02%
+  85  WS3_04S   19.99%    passed      7.78%
+  86  WS3_05S   17.77%    passed     62.09%
+  87  WS3_06S   18.37%    passed     33.01%
+  88  WS3_07S   18.02%    passed     23.45%
+  89  WS3_09S   17.91%    passed     23.54%
+  90  WS3_10S   17.72%    passed     43.77%
+  91  WS3_11S   17.30%    passed     72.68%
+  92  WS3_12S   18.53%    passed     43.61%
+  93  WS3_14S   17.98%    passed     20.64%
+  94  WS3_15S   18.63%    passed      9.25%
+  95  WS3_17S   15.05%    passed     82.16%
+****  TOTAL     18.90%  13 sequences failed composition chi2 test (p-value<5%; df=3)
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.075 seconds
+Generating 1000 samples for ultrafast bootstrap (seed: 97774)...
+
+NOTE: 56 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -106506.660
+2. Current log-likelihood: -94520.446
+3. Current log-likelihood: -94485.389
+Optimal log-likelihood: -94485.289
+Rate parameters:  A-C: 1.18003  A-G: 6.31687  A-T: 2.32217  C-G: 0.30484  C-T: 6.11994  G-T: 1.00000
+Base frequencies:  A: 0.164  C: 0.329  G: 0.333  T: 0.174
+Parameters optimization took 3 rounds (4.942 sec)
+Computing ML distances based on estimated model parameters... 0.773 sec
+Computing BIONJ tree...
+0.004 seconds
+Log-likelihood of BIONJ tree: -95640.567
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 10.435 second
+Computing log-likelihood of 98 initial trees ... 8.527 seconds
+Current best score: -94057.582
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -94016.142
+Iteration 10 / LogL: -94069.162 / Time: 0h:0m:38s
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 16: -93998.724
+Iteration 20 / LogL: -94125.633 / Time: 0h:0m:53s
+Finish initializing candidate tree set (20)
+Current best tree score: -93998.724 / CPU time: 46.798
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Iteration 30 / LogL: -94014.886 / Time: 0h:1m:6s (0h:3m:18s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 33: -93982.256
+Iteration 40 / LogL: -94002.923 / Time: 0h:1m:19s (0h:3m:10s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 45: -93979.464
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 47: -93977.002
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 48: -93970.095
+Iteration 50 / LogL: -93985.321 / Time: 0h:1m:34s (0h:3m:8s left)
+Log-likelihood cutoff on original alignment: -94208.931
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 60: -93957.834
+Iteration 60 / LogL: -93957.834 / Time: 0h:1m:49s (0h:3m:5s left)
+Iteration 70 / LogL: -93986.072 / Time: 0h:2m:3s (0h:2m:40s left)
+Iteration 80 / LogL: -93965.988 / Time: 0h:2m:17s (0h:2m:19s left)
+Iteration 90 / LogL: -93972.204 / Time: 0h:2m:31s (0h:1m:58s left)
+Iteration 100 / LogL: -93959.290 / Time: 0h:2m:44s (0h:1m:39s left)
+Log-likelihood cutoff on original alignment: -94202.430
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.991
+Iteration 110 / LogL: -93974.070 / Time: 0h:2m:58s (0h:2m:26s left)
+Iteration 120 / LogL: -93975.134 / Time: 0h:3m:11s (0h:2m:8s left)
+Iteration 130 / LogL: -94020.525 / Time: 0h:3m:24s (0h:1m:51s left)
+Iteration 140 / LogL: -94010.908 / Time: 0h:3m:38s (0h:1m:34s left)
+Iteration 150 / LogL: -93994.396 / Time: 0h:3m:51s (0h:1m:17s left)
+Log-likelihood cutoff on original alignment: -94202.430
+Iteration 160 / LogL: -93966.565 / Time: 0h:4m:6s (0h:1m:1s left)
+TREE SEARCH COMPLETED AFTER 161 ITERATIONS / Time: 0h:4m:8s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -93957.834
+Optimal log-likelihood: -93957.833
+Rate parameters:  A-C: 1.17174  A-G: 6.32077  A-T: 2.29685  C-G: 0.30105  C-T: 6.15362  G-T: 1.00000
+Base frequencies:  A: 0.163  C: 0.330  G: 0.338  T: 0.170
+Parameters optimization took 1 rounds (0.257 sec)
+BEST SCORE FOUND : -93957.833
+Creating bootstrap support values...
+Split supports printed to NEXUS file /tmp/IQTREE/Feq5kXEvUf/iqt.splits.nex
+Total tree length: 1.892
+
+Total number of iterations: 161
+CPU time used for tree search: 241.727 sec (0h:4m:1s)
+Wall-clock time used for tree search: 241.760 sec (0h:4m:1s)
+Total CPU time used: 248.421 sec (0h:4m:8s)
+Total wall-clock time used: 248.464 sec (0h:4m:8s)
+
+Computing bootstrap consensus tree...
+Reading input file /tmp/IQTREE/Feq5kXEvUf/iqt.splits.nex...
+95 taxa and 630 splits.
+Consensus tree written to /tmp/IQTREE/Feq5kXEvUf/iqt.contree
+Reading input trees file /tmp/IQTREE/Feq5kXEvUf/iqt.contree
+Log-likelihood of consensus tree: -93967.073
+
+Analysis results written to: 
+  IQ-TREE report:                /tmp/IQTREE/Feq5kXEvUf/iqt.iqtree
+  Maximum-likelihood tree:       /tmp/IQTREE/Feq5kXEvUf/iqt.treefile
+  Likelihood distances:          /tmp/IQTREE/Feq5kXEvUf/iqt.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          /tmp/IQTREE/Feq5kXEvUf/iqt.splits.nex
+  Consensus tree:                /tmp/IQTREE/Feq5kXEvUf/iqt.contree
+  Screen log file:               /tmp/IQTREE/Feq5kXEvUf/iqt.log
+
+Date and Time: Thu Jun 23 09:09:12 2022

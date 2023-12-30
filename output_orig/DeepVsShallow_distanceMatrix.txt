@@ -1,0 +1,9 @@
+	Curlew_D	Curlew_S	Lynch_D	Lynch_S	Niles_D	Niles_S	West_D	West_S
+Curlew_D	NA	NA	NA	NA	NA	NA	NA	NA
+Curlew_S	1	NA	NA	NA	NA	NA	NA	NA
+Lynch_D	0	1	NA	NA	NA	NA	NA	NA
+Lynch_S	1	0	1	NA	NA	NA	NA	NA
+Niles_D	0	1	0	1	NA	NA	NA	NA
+Niles_S	1	0	1	0	1	NA	NA	NA
+West_D	0	1	0	1	0	1	NA	NA
+West_S	1	0	1	0	1	0	1	NA

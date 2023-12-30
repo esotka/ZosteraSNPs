@@ -1,8 +1,9 @@
 # ZosteraSNPs
 
-This is the plant trait and SNP dataset for Zostera marina   
+This is the plant trait and SNP dataset for Zostera marina
+Updated Dec 30 2023
 
-### map of sites and geographic distances
+### map of sites and geographic distances  
 ***R/SiteMaps.R***  
 ***data/NSDE41661/***  
 ***output/GeographicDistanceIndiv.csv***  
@@ -11,16 +12,18 @@ This is the plant trait and SNP dataset for Zostera marina
 ***output/SiteMaps_coastline.pdf***  
 ***output/SiteMaps.pdf***  
 
-### map of sites and admix results
-***R/SiteMaps_NGSadmix.R***  
-***data/NSDE41661/***  
-***output/SiteMaps_NGSadmix.pdf***  
-
 ### plant traits 
 ***R/DensityHeightAnalysis.R***  
 ***data/perm.quad.density.2019.csv***  
 ***data/perm.quad.veg.ht.2019.csv***  
 ***output/DensityHeight.png***  
+
+### ~~~~~  TO DO ~~~~~~~~    
+
+### map of sites and admix results
+***R/SiteMaps_NGSadmix.R***  
+***data/NSDE41661/***  
+***output/SiteMaps_NGSadmix.pdf***  
 
 ### angsd-generated genotype likelihoods in beagle format  
 ***data/ind393_clean***  
