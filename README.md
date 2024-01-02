@@ -40,7 +40,7 @@ Updated Dec 30 2023
 ***R/ngsRelate_ClonesOnMap.R***  
 ***output/output/ClonesOnMap_Both.pdf***  
 
-### Seed plant traits  
+### Seed density and size   
 ***data/seedPhenotypes.csv***  
 ***R/seedPhenotypes.R***  
 ***output/seedPhenotypes.png***  
