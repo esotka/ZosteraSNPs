@@ -59,7 +59,6 @@ f1 <- ggplot(out, aes(x=site.nice, y=NumSeeds, fill=depth)) +
   theme_classic(base_size=20) + theme(legend.position=c(0.2,0.9)) +
   scale_fill_grey(start=.75,end=1,name="") +
   annotate(geom = "text", x = c(1,2,3,4), y = c(7.5,5,15,5), label = c("0.002","ns","<0.001","ns"),size=5)
-print(f1)
 
 ### mass per seed
 
@@ -108,8 +107,7 @@ f2 <- ggplot(seed, aes(x=site.nice, y=mass)) +
   theme_classic(base_size=20) + theme(legend.position=c(0.2,0.9)) +
   scale_fill_grey(start=.75,end=1,name="") +
   annotate(geom = "text", x = c(1,2,3,4), y = 0.012, label = c("A","ABC","B","C"),size=5)
-print(f2)
 
-png('seedPhenotypes.png',width=12,height=7,units="in",res=700)
+png('output/seedPhenotypes.png',width=12,height=7,units="in",res=700)
 grid.arrange(f1,f2,nrow=1,ncol=2)
 dev.off()

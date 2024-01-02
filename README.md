@@ -40,11 +40,12 @@ Updated Dec 30 2023
 ***R/ngsRelate_ClonesOnMap.R***  
 ***output/output/ClonesOnMap_Both.pdf***  
 
-### ~~~~~  TO DO ~~~~~~~~    
-
 ### Seed plant traits  
-***Frequency of seeds in cores***  
-***size of seeds***
+***data/seedPhenotypes.csv***  
+***R/seedPhenotypes.R***  
+***output/seedPhenotypes.png***  
+
+### ~~~~~  TO DO ~~~~~~~~    
 
 ### map of sites and admix results
 ***R/SiteMaps_NGSadmix.R***  
