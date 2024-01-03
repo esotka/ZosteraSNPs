@@ -45,12 +45,15 @@ Updated Dec 30 2023
 ***R/seedPhenotypes.R***  
 ***output/seedPhenotypes.png***  
 
-### ~~~~~  TO DO ~~~~~~~~    
-
 ### map of sites and admix results
 ***R/SiteMaps_NGSadmix.R***  
 ***data/NSDE41661/***  
-***output/SiteMaps_NGSadmix.pdf***  
+***data/k05run1.qopt***  
+***output/SiteMaps_NGSadmix.pdf*** 
+
+### ~~~~~  TO DO ~~~~~~~~    
+
+ 
 
 ### angsd-generated genotype likelihoods in beagle format  
 ***data/ind393_clean***  
