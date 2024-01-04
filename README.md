@@ -51,6 +51,14 @@ Updated Dec 30 2023
 ***data/k05run1.qopt***  
 ***output/SiteMaps_NGSadmix.pdf*** 
 
+### Analysis of Molecular Variance (AMOVA) and Pairwise PhiST
+***R/amova_noClones_calls.R***  
+***R/amova_seeds.R***  
+***output/amova.method1-calls_noClones.csv***  
+***output/amova.method1-calls_noClones-pairwisePhiSt.csv***  
+***output/amova.method1-calls_seeds-pairwisePhiSt.csv***  
+***output/amova.method1-seeds.csv***  
+
 ### ~~~~~  TO DO ~~~~~~~~    
 
  
@@ -84,11 +92,7 @@ Updated Dec 30 2023
 ***data/fasta/XXX***  
 ***data/fasta/XXX***  
 
-### Analysis of Molecular Variance (AMOVA) and Pairwise PhiST
-***R/amova_noClones_calls.R***  
-***data/Adults_noClones.beagle.gz***  
-***output/amova.method1-calls_noClones.csv***  
-***output/amova.method1-calls_noClones-pairwisePhiSt.csv***  
+
 
 ### Isolation by distance
 ***R/Fst~Distance.R***  

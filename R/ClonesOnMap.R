@@ -82,18 +82,19 @@ allind = env[env$adult.seed=="A",] # 268
 (table(allind$site.nice.depth))
 clones2$site.nice.depth = allind$site.nice.depth[match(clones2$indA,allind$ind)]
 (table(clones2$site.nice.depth))
-dat <- table(clones2$site.nice.depth)/table(allind$site.nice.depth)
+dat <- 1-table(clones2$site.nice.depth)/table(allind$site.nice.depth)
 (dat2 <- data.frame(CD=dat,SvD=rep(c("Deep","Shallow"),4)))
 print(anova(lm(CD.Freq~SvD,data=dat2)))
-#  CD.Var1    CD.Freq     SvD
-#1   cur_d 0.09302326    Deep
-#2   cur_s 0.63157895 Shallow
-#3   lyn_d 0.30000000    Deep
-#4   lyn_s 0.25000000 Shallow
-#5   wes_d 0.05263158    Deep
-#6   wes_s 0.10714286 Shallow
-#7   nil_d 0.10344828    Deep
-#8   nil_s 0.07407407 Shallow
+# clonal diversity (1-prop clones)
+#  CD.Var1   CD.Freq     SvD
+#1   cur_d 0.9069767    Deep
+#2   cur_s 0.3684211 Shallow
+#3   lyn_d 0.7000000    Deep
+#4   lyn_s 0.7500000 Shallow
+#5   wes_d 0.9473684    Deep
+#6   wes_s 0.8928571 Shallow
+#7   nil_d 0.8965517    Deep
+#8   nil_s 0.9259259 Shallow
 #> print(anova(lm(CD.Freq~SvD,data=dat2)))
 #Analysis of Variance Table
 #Response: CD.Freq

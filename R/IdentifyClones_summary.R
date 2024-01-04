@@ -72,24 +72,6 @@ all2$siteHabB = substr(all2$indB,1,3)
 write.csv(all2,"output/Clone_analysis.csv",row.names=F)
 
 ### choose clonal replicates to remove
-# seeds identified as a "clone" of an adult plant 
-# Note several of these adults are also clones themselves 
-# but these seeds were not recognized as clones of each other. so keep. 
-
-#> all2[all2$adult.seed=="AS",]
-#      indA    indB adult.seed    method siteHabA siteHabB
-#30 DS3_34S DS3_01A         AS ngsRelate      DS3      DS3
-#32 DS3_27S WS2_02A         AS      both      DS3      WS2
-#33 DS3_28S LD3_15A         AS      both      DS3      LD3
-#34 DS3_29S WS2_04A         AS      both      DS3      WS2
-#35 DS3_30S WS2_05A         AS      both      DS3      WS2
-#66 ND3_01S ND1_01A         AS ngsRelate      ND3      ND1 => adult clone ND1_01A; ND1_03A
-#67 ND3_01S ND1_03A         AS ngsRelate      ND3      ND1 => adult clone ND1_01A; ND1_03A
-#75 WS3_17S NS3_07A         AS ngsRelate      WS3      NS3
-#78 WS2_02S WS3_03A         AS ngsRelate      WS2      WS3 ==> adult clone WS3_03A; WS3_040A; WS3_05A; WS3_13A
-#79 WS2_02S WS3_04A         AS ngsRelate      WS2      WS3 ==> adult clone WS3_03A; WS3_040A; WS3_05A; WS3_13A
-#80 WS2_02S WS3_05A         AS ngsRelate      WS2      WS3 ==> adult clone WS3_03A; WS3_040A; WS3_05A; WS3_13A
-
 
 ### New list of unique genotypes identified with both methods (dissimilarity and NGS Relate's rab)
 # manually #
