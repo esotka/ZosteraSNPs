@@ -66,6 +66,16 @@ Updated Dec 30 2023
 ***output/amova.method1-calls_noClones-pairwisePhiSt.csv***  
 ***output/Fst~Distance.pdf***  
 
+### Region-wide PCA ###  
+***R/PCA_genotypeCalls_90perc.R***  
+***output/PCA_genotypeCalls_90perc.pdf***  
+
+### DAPC assignment - seeds & adults  
+***R/SeedAssignment-DAPC.R***  
+***output/SeedAssignment-DAPC.txt***  
+***output/SeedAssignment-DAPC.pdf***  
+
+
 ### ~~~~~  TO DO ~~~~~~~~    
 
  
@@ -131,11 +141,6 @@ Updated Dec 30 2023
 ***data/ngsRelate/***  
 ***output/Relatedness~Core-ngsRelate_seeds.pdf***  
 
-### DAPC assignment - seeds & adults  
-***R/SeedAssignment-DAPC.R***  
-***data/genotypeCalls.393ind.8684loci.geno***  
-***output/SeedAssignment-DAPC.txt***  
-***output/SeedAssignment-DAPC.pdf***  
 
 # Commands from other programs #
 ### ngsRelate ###
