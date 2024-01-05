@@ -47,9 +47,11 @@ Updated Dec 30 2023
 
 ### map of sites and admix results
 ***R/SiteMaps_NGSadmix.R***  
+***R/ngsAdmix_dips.pretty_adults-NoClones.R***  
 ***data/NSDE41661/***  
-***data/k05run1.qopt***  
-***output/SiteMaps_NGSadmix.pdf*** 
+***data/ngsAdmixFiles/***  
+***output/SiteMaps_NGSadmix.pdf***  
+***output/ngsAdmix_dips.pretty-adults+seeds.pdf***  
 
 ### Analysis of Molecular Variance (AMOVA) and Pairwise PhiST
 ***R/amova_noClones_calls.R***  
@@ -58,6 +60,11 @@ Updated Dec 30 2023
 ***output/amova.method1-calls_noClones-pairwisePhiSt.csv***  
 ***output/amova.method1-calls_seeds-pairwisePhiSt.csv***  
 ***output/amova.method1-seeds.csv***  
+
+### Isolation by distance
+***R/Fst~Distance.R***  
+***output/amova.method1-calls_noClones-pairwisePhiSt.csv***  
+***output/Fst~Distance.pdf***  
 
 ### ~~~~~  TO DO ~~~~~~~~    
 

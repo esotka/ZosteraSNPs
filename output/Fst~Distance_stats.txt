@@ -1,0 +1,63 @@
+[1] "all data; unstandardized y = fst"
+
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.019134 -0.007194 -0.002773  0.005780  0.037256 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 0.0298472  0.0047887   6.233 1.35e-06 ***
+x           0.0022593  0.0002924   7.726 3.38e-08 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.01354 on 26 degrees of freedom
+Multiple R-squared:  0.6966,	Adjusted R-squared:  0.6849 
+F-statistic: 59.69 on 1 and 26 DF,  p-value: 3.377e-08
+
+[1] "all data; standardized y = fst/(1-fst)"
+
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.020666 -0.008503 -0.003548  0.006156  0.043529 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 0.0305275  0.0054544   5.597 7.01e-06 ***
+x           0.0025465  0.0003331   7.645 4.10e-08 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.01542 on 26 degrees of freedom
+Multiple R-squared:  0.6921,	Adjusted R-squared:  0.6803 
+F-statistic: 58.45 on 1 and 26 DF,  p-value: 4.096e-08
+
+[1] "deep-deep and shallow-shallow; unstandardized y = fst"
+
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.014979 -0.008009 -0.003056  0.003681  0.036452 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)   
+(Intercept) 0.0335666  0.0100698   3.333  0.00757 **
+x           0.0020604  0.0005693   3.619  0.00470 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.01436 on 10 degrees of freedom
+Multiple R-squared:  0.567,	Adjusted R-squared:  0.5238 
+F-statistic:  13.1 on 1 and 10 DF,  p-value: 0.004697
+
+[1] "Mantel test - pearson"
+   mantelr      pval1      pval2      pval3  llim.2.5% ulim.97.5% 
+ 0.8346216  0.0004000  0.9998000  0.0004000  0.7760520  0.9021753 
