@@ -15,6 +15,13 @@ p <- matrix(p,nrow=ncat,ncol=8,byrow=T)
 p <- ifelse(p<=0.05,"*","")
 colnames(p) = sitenames
 
+# p-value - regression kinship~log (dist)
+tmp = dat[grep("2-sided test",dat)]
+sitenames = substr(tmp,regexpr("out.txt",tmp)-6,regexpr("out.txt",tmp)-2)
+p_reg = as.numeric(unlist(lapply(strsplit(tmp,"\t"),"[[",16)))
+p_reg[p_reg==0] = 0.001
+names(p_reg) = sitenames
+
 # meters
 tmp = dat[grep("Mean distance",dat)]
 sitenames = substr(tmp,regexpr("out.txt",tmp)-6,regexpr("out.txt",tmp)-2)
@@ -51,6 +58,9 @@ for(i in 3:12)
 u95 <- matrix(u95,nrow=ncat,ncol=8,byrow=T)
 colnames(u95) = sitenames
 
+# regression p-values
+
+
 # pretty names
 pretty_names = c("Curlew Deep",#cur_d" 
                  "Curlew Shallow",#,cur_s" 
@@ -67,6 +77,7 @@ for(n in c(1:4,7,8,5,6)) # change order of sites from South to North
 {
   plot(x=m[,n],y=k[,n],type="b",ylim=c(-.1,.15),xlim=c(0,45),ylab="kinship",xlab="meters",pch=20,cex=1.2)
   mtext(pretty_names[n],line=-2)
+  mtext(round(p_reg[n],3),line=-3.5,cex=.5)
   segments(-1,0,50,0,lty="dashed")
   points(x=m[,n],y=u95[,n],col="red",lty="dashed",type="l")
   points(x=m[,n],y=l95[,n],col="red",lty="dashed",type="l")
