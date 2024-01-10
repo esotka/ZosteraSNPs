@@ -75,6 +75,11 @@ Updated Dec 30 2023
 ***output/SeedAssignment-DAPC.txt***  
 ***output/SeedAssignment-DAPC.pdf***  
 
+### SPAGEDI correlogram of adults
+***R/SpagediSGS_noClones_10categories.R***  
+***data/data/allSite.Spagedi.out.txt***  
+***output/SpagediSGS_noClones_10categories.pdf***  
+
 
 ### ~~~~~  TO DO ~~~~~~~~    
 
@@ -92,11 +97,6 @@ Updated Dec 30 2023
 ***data/ind393_clean***  
 ***data/loci8684***    
 
-### SPAGHEDI correlogram of adults
-***R/CreateSpaghediFiles.R***  
-***R/SpagediSGS_noClones_10categories.R***  
-***data/allSite.Spagedi.out_noClones_10categories.txt***  
-***output/SpagediSGS_noClones_10categories.pdf***  
 
 ### Basic pop gen statistics     
 ***R/basicStats_adultsNoClones.R***  
