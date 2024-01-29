@@ -66,10 +66,10 @@ pretty_names = c("Curlew Deep",#cur_d"
                  "Curlew Shallow",#,cur_s" 
                  "Lynch Deep",#lyn_d" 
                  "Lynch Shallow",#lyn_s" 
-                 "West Deep",#wes_d"
-                 "West Shallow",#wes_s" 
                  "Niles Deep",#"nil_d" 
-                 "Niles Shallow")#nil_s"
+                 "Niles Shallow",#nil_s"
+                  "West Deep",#wes_d"
+                 "West Shallow")#wes_s" 
 
 pdf("output/SpagediSGS_noClones_10categories.pdf",width=10,height=4)
 par(mfcol=c(2,4),mai=c(0.3,0.3,0.1,0.1))
