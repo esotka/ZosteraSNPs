@@ -49,7 +49,7 @@ env$site.nice <- factor(env$site.nice)
 env$SvD <- factor(env$SvD)
 env$SvD.adult.seed = factor(paste(env$SvD,env$adult.seed,sep=""))
 env$site.nice.depth = factor(paste(env$site.nice,env$SvD))
-cols <- c(rep("blue",2),rep("purple",2),rep("black",2),rep("red",2))
+cols <- c(rep("red",2),rep("darkgrey",2),rep("black",2),rep("forestgreen",2))
 pchs = c(19,3,21,3)
 
 #adults + seeds 

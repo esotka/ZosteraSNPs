@@ -81,67 +81,6 @@ Updated Dec 30 2023
 ***output/SpagediSGS_noClones_10categories.pdf***  
 
 
-### ~~~~~  TO DO ~~~~~~~~    
-
- 
-
-### angsd-generated genotype likelihoods in beagle format  
-***data/ind393_clean***  
-***data/loci19433***  
-***data/zos.393ind.HWE.99.gl.beagle.gz***  
-
-### genotype calls
-***R/SubsetGenotypeCalls.R***  
-***data/zos.393ind.HWE.99.loci19433.vcf.gz***  
-***data/genotypeCalls.393ind.8684loci.geno***This is the output dataset  
-***data/ind393_clean***  
-***data/loci8684***    
-
-
-### Basic pop gen statistics     
-***R/basicStats_adultsNoClones.R***  
-***output/BasicStats_adultsNoClones.csv***  
-
-### Create FASTA from calls and generate Maximum Likelihood tree ###  
-***R/ConvertVCFToFASTA.R***  
-***R/iQtreePlot.R***  
-***data/fasta/XXX***  
-***data/fasta/XXX***  
-***data/fasta/XXX***  
-
-
-
-### Isolation by distance
-***R/Fst~Distance.R***  
-***output/amova.method1-calls_noClones-pairwisePhiSt.csv***  
-***output/Fst~Distance.pdf***  
-
-### Admixture analysis - adults and seeds   
-***R/ngsAdmix_dips.pretty_adults-NoClones.R***  
-***R/ngsAdmix_dips.pretty_seeds.R***  
-***data/ind245adults_noClones_clean***  
-***data/ind99_seeds***  
-***data/ngsadmix-noClones/*opt***  
-***data/NGSadmix-seeds/*opt***  
-***output/ngsAdmix_dips.pretty-adults-NoClones.pdf***  
-***output/ngsAdmix_dips.pretty-seeds.pdf***  
-
-### Site-specific PCA and admix plots
-***R/Site-pca&admix_noClones.R***  
-***data/zos.393ind.HWE.99.loci19433.vcf.gz***  
-***data/ind393_clean***  
-***data/ind245adults_noClones_clean***  
-***data/loci8684***    
-***data/ngsadmix-noClones-site/***  
-***output/Site-pca&admix_noClones.pdf***    
-
-### Relatedness of seeds within and among grids and cores (NGSrelate)
-***R/Relatedness-seeds-ngsRelate.R***  
-***data/Seed ID to core.xlsx***  
-***data/ngsRelate/***  
-***output/Relatedness~Core-ngsRelate_seeds.pdf***  
-
-
 # Commands from other programs #
 ### ngsRelate ###
 ***see https://github.com/ANGSD/NgsRelate***  
