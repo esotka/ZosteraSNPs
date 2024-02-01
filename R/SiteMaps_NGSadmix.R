@@ -40,9 +40,10 @@ text("N",x=-71.05,y=42.60,pos=3,cex=1.5)
 
 
 ## admix k=5 (highest delta). No clones
-a <- read.delim("data/ngsAdmixFiles/k07run1.qopt",header=F,sep=" ")
-#kcol <- c("red","darkgreen","black","gainsboro","yellow")[c(4,3,5,1,2)]
-kcol <- c("red","darkgreen","black","gainsboro","yellow","deepskyblue","brown")[c(6,1,7,4,3,5,2)]
+a <- read.delim("data/ngsAdmixFiles/k05run1.qopt",header=F,sep=" ")
+k=5
+kcol <- c("red","darkgreen","black","gainsboro","yellow")[c(4,3,5,1,2)]
+#kcol <- c("red","darkgreen","black","gainsboro","yellow","deepskyblue","brown")[c(6,1,7,4,3,5,2)]
 inds <- readLines("data/214adults99seeds_noClones_clean")
 env <- data.frame(ind=substr(inds,1,7),
                   adult.seed=substr(inds,7,7),
@@ -58,27 +59,27 @@ env$site.nice <- factor(env$site.nice)
 env$site.nice <- factor(env$site.nice,levels=levels(env$site.nice)[c(1,2,4,3)])
 print(levels(env$site.nice))
 #[1] "Curlew" "Lynch"  "West"   "Niles"
-xbar <- aggregate(a[,1:7],by=list(env$site.nice,env$adult.seed,env$SvD),mean)
+xbar <- aggregate(a[,1:k],by=list(env$site.nice,env$adult.seed,env$SvD),mean)
 xbar$pos = meta[match(xbar$Group.1,rownames(meta)),]
 # adultshallow
 tmp = xbar[xbar$Group.2=="A" & xbar$Group.3=="S",]
 text("AS",x=tmp$pos$piex,y=tmp$pos$piey-0.03,col="black")
 for (j in 1:4)
-{floating.pie(xpos=tmp$pos$piex[j],ypos=tmp$pos$piey[j],x=c(t(tmp[j,4:10])),col=kcol,radius=0.025)}
+{floating.pie(xpos=tmp$pos$piex[j],ypos=tmp$pos$piey[j],x=c(t(tmp[j,4:(k+3)])),col=kcol,radius=0.025)}
     
 # adultdeep
 tmp = xbar[xbar$Group.2=="A" & xbar$Group.3=="D",]
 text("AD",x=tmp$pos$piex-0.06,y=tmp$pos$piey-0.03,col="black")
 for (j in 1:4)
-{floating.pie(xpos=tmp$pos$piex[j]-0.06,ypos=tmp$pos$piey[j],x=c(t(tmp[j,4:10])),col=kcol,radius=0.025)}
+{floating.pie(xpos=tmp$pos$piex[j]-0.06,ypos=tmp$pos$piey[j],x=c(t(tmp[j,4:(k+3)])),col=kcol,radius=0.025)}
 
-xbar <- aggregate(a[,1:7],by=list(env$site.nice,env$adult.seed),mean)
+xbar <- aggregate(a[,1:k],by=list(env$site.nice,env$adult.seed),mean)
 xbar$pos = meta[match(xbar$Group.1,rownames(meta)),]
 # all seeds
 tmp = xbar[xbar$Group.2=="S",]
 text("Seed",x=tmp$pos$piex+0.06,y=tmp$pos$piey-0.03,col="black")
 for (j in 1:4)
-{floating.pie(xpos=tmp$pos$piex[j]+0.06,ypos=tmp$pos$piey[j],x=c(t(tmp[j,3:9])),col=kcol,radius=0.025)}
+{floating.pie(xpos=tmp$pos$piex[j]+0.06,ypos=tmp$pos$piey[j],x=c(t(tmp[j,3:(k+2)])),col=kcol,radius=0.025)}
 
 
 #text(x=c(meta$piex-0.06,meta$piex,meta$piex+0.06),y=meta$piey,c("DA","SA","S"),col="white")
