@@ -32,6 +32,12 @@ print(histogram(~total.density | site.nice+depth,data = dat,col="grey",breaks=20
 m1 <- lm(total.density~factor(site)*factor(depth),dat)
 print(Anova(m1))
 
+TukeyHSD(aov(m1))
+#DC:Shallow-DC:Deep    0.0000000
+#LP:Shallow-LP:Deep   0.0000000
+#NB:Shallow-NB:Deep    0.0000000
+#WB:Shallow-WB:Deep    0.0000000
+
 htmodel <- lmer(total.density ~ site * depth + (1|perm.quadrat), data = dat, REML = FALSE)
 print(Anova(htmodel))
 
@@ -51,6 +57,11 @@ print(f1)
 
 print(histogram(~biomass | site+depth,data = dat,col="grey",breaks=20))
 print(Anova(lm(biomass~factor(site)*factor(depth),dat)))
+print(TukeyHSD(aov(lm(biomass~factor(site)*factor(depth),dat))))
+#DC:Shallow-DC:Deep    0.0000000
+#LP:Shallow-LP:Deep   0.0000000
+#NB:Shallow-NB:Deep    0.0000000
+#WB:Shallow-WB:Deep    0.0000000
 
 print(aggregate(dat$biomass,by=list(dat$site.nice,dat$depth),mean,na.rm=T))
 htmodel <- lmer(biomass ~ site * depth + (1|perm.quadrat), data = dat, REML = FALSE)

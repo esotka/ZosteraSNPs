@@ -1,0 +1,16 @@
+setwd('/Users/sotkae/Library/CloudStorage/Dropbox/Documents/Publications/CURRENT/zosteraSNPs.Hays/ZosteraGenome3-analyses/ZosteraSNPs/R')
+rm(list=ls())
+setwd('/Users/sotkae/Library/CloudStorage/Dropbox/Documents/Publications/CURRENT/zosteraSNPs.Hays/ZosteraGenome3-analyses/ZosteraSNPs/R')
+rm(list=ls())
+setwd('/Users/sotkae/Library/CloudStorage/Dropbox/Documents/Publications/CURRENT/zosteraSNPs.Hays/ZosteraGenome3-analyses/ZosteraSNPs/R')
+niter = 100000
+setwd('/Users/sotkae/Library/CloudStorage/Dropbox/Documents/Publications/CURRENT/zosteraSNPs.Hays/ZosteraGenome3-analyses/ZosteraSNPs/R')
+m <- 0.0025465 # isolation by distance slope (Fst/(1-Fst) per km)
+setwd('/Users/sotkae/Library/CloudStorage/Dropbox/Documents/Publications/CURRENT/zosteraSNPs.Hays/ZosteraGenome3-analyses/ZosteraSNPs/R')
+mse <- 0.0003331 # standard error on m
+setwd('/Users/sotkae/Library/CloudStorage/Dropbox/Documents/Publications/CURRENT/zosteraSNPs.Hays/ZosteraGenome3-analyses/ZosteraSNPs/R')
+a = 0.04 # length of each pop from which seeds were taken
+setwd('/Users/sotkae/Library/CloudStorage/Dropbox/Documents/Publications/CURRENT/zosteraSNPs.Hays/ZosteraGenome3-analyses/ZosteraSNPs/R')
+n = 47 # number of samples generating Ne Estimate - West seeds
+setwd('/Users/sotkae/Library/CloudStorage/Dropbox/Documents/Publications/CURRENT/zosteraSNPs.Hays/ZosteraGenome3-analyses/ZosteraSNPs/R')
+NeEstimates = read.table("data/NeEstimator.West.out.txt",header=T,sep="\t") # Nb from NeEstimator with variable MAF
