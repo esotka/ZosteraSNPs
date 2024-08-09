@@ -54,11 +54,15 @@ for(i in 1:4)
   tmp <- out2[rownames(out2)%in%ind,] # rows = pop; cols=loci
   depth <- substr(rownames(tmp),2,2); depth <- factor(depth)
   pc.cr <- prcomp(tmp)
+  # %variation
+  print(indFiles[i])
+ print(pc.cr$sdev[1:2]/sum(pc.cr$sdev))
   col.sub <- c("black","red")[depth]
   #print(depth)
   par(mar=c(3,3,4,2))
   plot(pc.cr$x[,1],pc.cr$x[,2],cex=0,xaxt="none",yaxt="none",ylab="",xlab="")
-  mtext(side=1,line=1,"PC1"); mtext(side=2,line=1,"PC2")
+  mtext(side=1,line=1,paste("PC1 (",round(100*pc.cr$sdev[1]/sum(pc.cr$sdev),1),"%)",sep=""))
+  mtext(side=2,line=1,paste("PC2 (",round(100*pc.cr$sdev[2]/sum(pc.cr$sdev),1),"%)",sep=""))
   points(pc.cr$x[,1],pc.cr$x[,2],pch=20,cex=1.5,col=alpha(col.sub,.5))
   for (j in 1:2){
     xbar.x <- mean(pc.cr$x[depth==levels(depth)[j],1])

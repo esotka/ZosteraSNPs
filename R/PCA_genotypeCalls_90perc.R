@@ -58,6 +58,9 @@ s.class(pca1$li,env$site.nice.depth,
       col=transp(cols,.6),grid=F,cstar = 0,cpoint=2,
       pch=pchs[env$SvD.adult.seed])
 
+# print(pca1$eig[1:2]/sum(pca1$eig))
+# 0.04124761 0.02344632
+
 legend(x=10,y=-7,c("Seed","Deep Adult","Shallow Adult"),pch=c(3,19,21))
 dev.off()
 
